@@ -290,8 +290,4 @@ public class ClassParser {
 			//if()
 		}
 	}
-	
-	public static void main(String[] args) {
-		new ClassParser("org.mql.java.models.User");
-	}
 }
