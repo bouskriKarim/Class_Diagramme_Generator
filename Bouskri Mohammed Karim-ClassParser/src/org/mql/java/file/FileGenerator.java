@@ -9,7 +9,7 @@ import org.mql.java.reflection.PackageExplorer;
 public class FileGenerator {
 
 	public FileGenerator() {
-		//test
+		//testdd
 			FileWriter myWriter;
 			PackageExplorer pe = new PackageExplorer("Bouskri Mohammed Karim-ClassParser");
 			
