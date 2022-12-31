@@ -18,9 +18,7 @@ public class PackageExplorer {
 		project = new ProjectModel(projectName);
 		
 		String classPath = System.getProperty("java.class.path");
-		
 		String[] s = classPath.split("\\\\");
-		
 		String newClassPath = s[0];
 		
 		for (int i = 1; i < s.length-2; i++) {
@@ -28,13 +26,8 @@ public class PackageExplorer {
 		}
 		
 		newClassPath +="/"+projectName+"/bin";
-		
-		System.out.println(newClassPath);
-		File directory = new File(newClassPath);
-		
-		
+		File directory = new File(newClassPath);		
 		getPackages(directory.listFiles());
-		
 		addClassesToPackages();
 
 	}
@@ -50,7 +43,6 @@ public class PackageExplorer {
 				if(size == 0 || file.listFiles()[0].getName().contains(".class") || file.listFiles()[size-1].getName().contains(".class")) 
 				{
 					project.addPackage(new PackageModel(file.getName(), file.getAbsolutePath().substring(file.getAbsolutePath().indexOf("bin")).replace("\\", ".").substring(4)));
-					//project.getPackages().get(0).addClass(new ClassExplorer(file.getAbsolutePath().substring(file.getAbsolutePath().indexOf("bin")).replace("\\", ".").substring(4)));
 				}
 				
 				getPackages(file.listFiles());
@@ -65,7 +57,6 @@ public class PackageExplorer {
 		for (PackageModel packageModel : packages) {
 			String[] classesName = new ClassExplorer(packageModel.getQualifiedName()).getClassList();
 			for (String className : classesName) {
-				System.out.println(className);
 				packageModel.addClass(new ClassParser(className).getMyClass());
 			}
 			
