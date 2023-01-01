@@ -18,6 +18,10 @@ public class User extends JPanel implements Runnable,ActionListener {
 	private String lastName;
 	private Account account;
 	private List<String> phones;
+	private List<Account> accounts;
+	private Long test;
+	private Double d;
+	private Integer i;
 
 	public User() {
 		// TODO Auto-generated constructor stub

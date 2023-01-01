@@ -1,18 +1,16 @@
-
+<?xml version="1.0" encoding="UTF-8"?>
 <project projectName='Bouskri Mohammed Karim-ClassParser'>
 	<packages>
 		<package qualifiedName='org.mql.java.enums'>
 			<classes>
-				<class>
-					<visbility>public final</visbility>
-					<name>TestEnum</name>
-					<superClass>Enum</superClass>
+				<class className='TestEnum' vidisility='public final'
+					superClass='Enum'>
 					<inheritanceChain>
 						<className>Enum</className>
 						<className>Object</className>
 					</inheritanceChain>
-					<interfaces>
-					</interfaces>
+					<interfaces />
+
 					<properties>
 						<property>
 							<name>ENUM$VALUES</name>
@@ -23,7 +21,7 @@
 					<constructors>
 						<constructor>
 							<name>TestEnum</name>
-							<type></type>
+							<type />
 							<parameters>
 								<parameter>
 									<name>arg0</name>
@@ -43,8 +41,8 @@
 						<methode>
 							<name>values</name>
 							<type>TestEnum[]</type>
-							<parameters>
-							</parameters>
+							<parameters />
+
 							<visibility>public static</visibility>
 						</methode>
 						<methode>
@@ -60,31 +58,33 @@
 							<visibility>public static</visibility>
 						</methode>
 					</methodes>
-					<internClasses>
-					</internClasses>
-					<classHeader>public final TestEnum extends Enum</classHeader>
+					<aggregation>
+						<className>[Lorg.mql.java.enums.TestEnum;
+						</className>
+					</aggregation>
+					<uses />
+
+					<internClasses />
 				</class>
 			</classes>
 		</package>
 		<package qualifiedName='org.mql.java.exemples'>
 			<classes>
-				<class>
-					<visbility>public</visbility>
-					<name>Examples</name>
-					<superClass>Object</superClass>
+				<class className='Examples' vidisility='public'
+					superClass='Object'>
 					<inheritanceChain>
 						<className>Object</className>
 					</inheritanceChain>
-					<interfaces>
-					</interfaces>
-					<properties>
-					</properties>
+					<interfaces />
+
+					<properties />
+
 					<constructors>
 						<constructor>
 							<name>Examples</name>
-							<type></type>
-							<parameters>
-							</parameters>
+							<type />
+							<parameters />
+
 							<visibility>public</visibility>
 						</constructor>
 					</constructors>
@@ -102,80 +102,82 @@
 							<visibility>public static</visibility>
 						</methode>
 						<methode>
-							<name>exp06</name>
+							<name>exp05</name>
 							<type>void</type>
-							<parameters>
-							</parameters>
+							<parameters />
+
 							<visibility>private</visibility>
 						</methode>
 						<methode>
 							<name>exp07</name>
 							<type>void</type>
-							<parameters>
-							</parameters>
-							<visibility>private</visibility>
-						</methode>
-						<methode>
-							<name>exp03</name>
-							<type>void</type>
-							<parameters>
-							</parameters>
-							<visibility>private</visibility>
-						</methode>
-						<methode>
-							<name>exp04</name>
-							<type>void</type>
-							<parameters>
-							</parameters>
-							<visibility>private</visibility>
-						</methode>
-						<methode>
-							<name>exp01</name>
-							<type>void</type>
-							<parameters>
-							</parameters>
-							<visibility>private</visibility>
-						</methode>
-						<methode>
-							<name>exp05</name>
-							<type>void</type>
-							<parameters>
-							</parameters>
+							<parameters />
+
 							<visibility>private</visibility>
 						</methode>
 						<methode>
 							<name>exp02</name>
 							<type>void</type>
-							<parameters>
-							</parameters>
+							<parameters />
+
+							<visibility>private</visibility>
+						</methode>
+						<methode>
+							<name>exp01</name>
+							<type>void</type>
+							<parameters />
+
+							<visibility>private</visibility>
+						</methode>
+						<methode>
+							<name>exp06</name>
+							<type>void</type>
+							<parameters />
+
+							<visibility>private</visibility>
+						</methode>
+						<methode>
+							<name>exp03</name>
+							<type>void</type>
+							<parameters />
+
+							<visibility>private</visibility>
+						</methode>
+						<methode>
+							<name>exp04</name>
+							<type>void</type>
+							<parameters />
+
 							<visibility>private</visibility>
 						</methode>
 					</methodes>
-					<internClasses>
-					</internClasses>
-					<classHeader>public Examples extends Object</classHeader>
+					<aggregation />
+
+					<uses>
+						<className>[Ljava.lang.String;
+						</className>
+					</uses>
+					<internClasses />
 				</class>
 			</classes>
 		</package>
 		<package qualifiedName='org.mql.java.file'>
 			<classes>
-				<class>
-					<visbility>public</visbility>
-					<name>FileGenerator</name>
-					<superClass>Object</superClass>
+				<class className='FileGenerator' vidisility='public'
+					superClass='Object'>
 					<inheritanceChain>
 						<className>Object</className>
 					</inheritanceChain>
-					<interfaces>
-					</interfaces>
-					<properties>
-					</properties>
+					<interfaces />
+
+					<properties />
+
 					<constructors>
 						<constructor>
 							<name>FileGenerator</name>
-							<type></type>
-							<parameters>
-							</parameters>
+							<type />
+							<parameters />
+
 							<visibility>public</visibility>
 						</constructor>
 					</constructors>
@@ -193,23 +195,25 @@
 							<visibility>public static</visibility>
 						</methode>
 					</methodes>
-					<internClasses>
-					</internClasses>
-					<classHeader>public FileGenerator extends Object</classHeader>
+					<aggregation />
+
+					<uses>
+						<className>[Ljava.lang.String;
+						</className>
+					</uses>
+					<internClasses />
 				</class>
 			</classes>
 		</package>
 		<package qualifiedName='org.mql.java.models'>
 			<classes>
-				<class>
-					<visbility>public</visbility>
-					<name>Account</name>
-					<superClass>Object</superClass>
+				<class className='Account' vidisility='public'
+					superClass='Object'>
 					<inheritanceChain>
 						<className>Object</className>
 					</inheritanceChain>
-					<interfaces>
-					</interfaces>
+					<interfaces />
+
 					<properties>
 						<property>
 							<name>login</name>
@@ -225,14 +229,14 @@
 					<constructors>
 						<constructor>
 							<name>Account</name>
-							<type></type>
-							<parameters>
-							</parameters>
+							<type />
+							<parameters />
+
 							<visibility>public</visibility>
 						</constructor>
 						<constructor>
 							<name>Account</name>
-							<type></type>
+							<type />
 							<parameters>
 								<parameter>
 									<name>arg0</name>
@@ -249,6 +253,13 @@
 						</constructor>
 					</constructors>
 					<methodes>
+						<methode>
+							<name>getPassword</name>
+							<type>String</type>
+							<parameters />
+
+							<visibility>public</visibility>
+						</methode>
 						<methode>
 							<name>setLogin</name>
 							<type>void</type>
@@ -274,33 +285,26 @@
 							<visibility>public</visibility>
 						</methode>
 						<methode>
-							<name>getPassword</name>
-							<type>String</type>
-							<parameters>
-							</parameters>
-							<visibility>public</visibility>
-						</methode>
-						<methode>
 							<name>getLogin</name>
 							<type>String</type>
-							<parameters>
-							</parameters>
+							<parameters />
+
 							<visibility>public</visibility>
 						</methode>
 					</methodes>
-					<internClasses>
-					</internClasses>
-					<classHeader>public Account extends Object</classHeader>
+					<aggregation />
+
+					<uses />
+
+					<internClasses />
 				</class>
-				<class>
-					<visbility>public</visbility>
-					<name>ClassModel</name>
-					<superClass>Object</superClass>
+				<class className='ClassModel' vidisility='public'
+					superClass='Object'>
 					<inheritanceChain>
 						<className>Object</className>
 					</inheritanceChain>
-					<interfaces>
-					</interfaces>
+					<interfaces />
+
 					<properties>
 						<property>
 							<name>visbility</name>
@@ -352,11 +356,21 @@
 							<type>String</type>
 							<visibility>private</visibility>
 						</property>
+						<property>
+							<name>aggregation</name>
+							<type>List</type>
+							<visibility>private</visibility>
+						</property>
+						<property>
+							<name>uses</name>
+							<type>List</type>
+							<visibility>private</visibility>
+						</property>
 					</properties>
 					<constructors>
 						<constructor>
 							<name>ClassModel</name>
-							<type></type>
+							<type />
 							<parameters>
 								<parameter>
 									<name>arg0</name>
@@ -376,29 +390,29 @@
 						<methode>
 							<name>getName</name>
 							<type>String</type>
-							<parameters>
-							</parameters>
+							<parameters />
+
 							<visibility>public</visibility>
 						</methode>
 						<methode>
 							<name>getInterfaces</name>
 							<type>List</type>
-							<parameters>
-							</parameters>
+							<parameters />
+
 							<visibility>public</visibility>
 						</methode>
 						<methode>
 							<name>getMethods</name>
 							<type>List</type>
-							<parameters>
-							</parameters>
+							<parameters />
+
 							<visibility>public</visibility>
 						</methode>
 						<methode>
 							<name>getConstructors</name>
 							<type>List</type>
-							<parameters>
-							</parameters>
+							<parameters />
+
 							<visibility>public</visibility>
 						</methode>
 						<methode>
@@ -416,8 +430,8 @@
 						<methode>
 							<name>getProperties</name>
 							<type>List</type>
-							<parameters>
-							</parameters>
+							<parameters />
+
 							<visibility>public</visibility>
 						</methode>
 						<methode>
@@ -457,31 +471,12 @@
 							<visibility>public</visibility>
 						</methode>
 						<methode>
-							<name>getExtensionChain</name>
-							<type>List</type>
-							<parameters>
-							</parameters>
-							<visibility>public</visibility>
-						</methode>
-						<methode>
 							<name>setVisbility</name>
 							<type>void</type>
 							<parameters>
 								<parameter>
 									<name>arg0</name>
 									<type>String</type>
-									<visibility>null</visibility>
-								</parameter>
-							</parameters>
-							<visibility>public</visibility>
-						</methode>
-						<methode>
-							<name>addPropertie</name>
-							<type>void</type>
-							<parameters>
-								<parameter>
-									<name>arg0</name>
-									<type>PropertyModel</type>
 									<visibility>null</visibility>
 								</parameter>
 							</parameters>
@@ -496,32 +491,6 @@
 									<type>MethodModel</type>
 									<visibility>null</visibility>
 								</parameter>
-							</parameters>
-							<visibility>public</visibility>
-						</methode>
-						<methode>
-							<name>addSuperClass</name>
-							<type>void</type>
-							<parameters>
-								<parameter>
-									<name>arg0</name>
-									<type>String</type>
-									<visibility>null</visibility>
-								</parameter>
-							</parameters>
-							<visibility>public</visibility>
-						</methode>
-						<methode>
-							<name>getClassHeader</name>
-							<type>String</type>
-							<parameters>
-							</parameters>
-							<visibility>public</visibility>
-						</methode>
-						<methode>
-							<name>getSuperClass</name>
-							<type>String</type>
-							<parameters>
 							</parameters>
 							<visibility>public</visibility>
 						</methode>
@@ -550,6 +519,18 @@
 							<visibility>public</visibility>
 						</methode>
 						<methode>
+							<name>addPropertie</name>
+							<type>void</type>
+							<parameters>
+								<parameter>
+									<name>arg0</name>
+									<type>PropertyModel</type>
+									<visibility>null</visibility>
+								</parameter>
+							</parameters>
+							<visibility>public</visibility>
+						</methode>
+						<methode>
 							<name>addConstructor</name>
 							<type>void</type>
 							<parameters>
@@ -562,10 +543,81 @@
 							<visibility>public</visibility>
 						</methode>
 						<methode>
-							<name>getInternClass</name>
+							<name>getSuperClass</name>
+							<type>String</type>
+							<parameters />
+
+							<visibility>public</visibility>
+						</methode>
+						<methode>
+							<name>getExtensionChain</name>
 							<type>List</type>
+							<parameters />
+
+							<visibility>public</visibility>
+						</methode>
+						<methode>
+							<name>getUses</name>
+							<type>List</type>
+							<parameters />
+
+							<visibility>public</visibility>
+						</methode>
+						<methode>
+							<name>addAgregat</name>
+							<type>void</type>
 							<parameters>
+								<parameter>
+									<name>arg0</name>
+									<type>String</type>
+									<visibility>null</visibility>
+								</parameter>
 							</parameters>
+							<visibility>public</visibility>
+						</methode>
+						<methode>
+							<name>addUse</name>
+							<type>void</type>
+							<parameters>
+								<parameter>
+									<name>arg0</name>
+									<type>String</type>
+									<visibility>null</visibility>
+								</parameter>
+							</parameters>
+							<visibility>public</visibility>
+						</methode>
+						<methode>
+							<name>addSuperClass</name>
+							<type>void</type>
+							<parameters>
+								<parameter>
+									<name>arg0</name>
+									<type>String</type>
+									<visibility>null</visibility>
+								</parameter>
+							</parameters>
+							<visibility>public</visibility>
+						</methode>
+						<methode>
+							<name>getClassHeader</name>
+							<type>String</type>
+							<parameters />
+
+							<visibility>public</visibility>
+						</methode>
+						<methode>
+							<name>getMethodes</name>
+							<type>List</type>
+							<parameters />
+
+							<visibility>public</visibility>
+						</methode>
+						<methode>
+							<name>getVisbility</name>
+							<type>String</type>
+							<parameters />
+
 							<visibility>public</visibility>
 						</methode>
 						<methode>
@@ -581,7 +633,45 @@
 							<visibility>public</visibility>
 						</methode>
 						<methode>
-							<name>setExtensionChain</name>
+							<name>setMethodes</name>
+							<type>void</type>
+							<parameters>
+								<parameter>
+									<name>arg0</name>
+									<type>List</type>
+									<visibility>null</visibility>
+								</parameter>
+							</parameters>
+							<visibility>public</visibility>
+						</methode>
+						<methode>
+							<name>getInternClass</name>
+							<type>List</type>
+							<parameters />
+
+							<visibility>public</visibility>
+						</methode>
+						<methode>
+							<name>getAggregation</name>
+							<type>List</type>
+							<parameters />
+
+							<visibility>public</visibility>
+						</methode>
+						<methode>
+							<name>setAggregation</name>
+							<type>void</type>
+							<parameters>
+								<parameter>
+									<name>arg0</name>
+									<type>List</type>
+									<visibility>null</visibility>
+								</parameter>
+							</parameters>
+							<visibility>public</visibility>
+						</methode>
+						<methode>
+							<name>setUses</name>
 							<type>void</type>
 							<parameters>
 								<parameter>
@@ -605,43 +695,24 @@
 							<visibility>public</visibility>
 						</methode>
 						<methode>
-							<name>setInterfaces</name>
-							<type>void</type>
-							<parameters>
-								<parameter>
-									<name>arg0</name>
-									<type>List</type>
-									<visibility>null</visibility>
-								</parameter>
-							</parameters>
-							<visibility>public</visibility>
-						</methode>
-						<methode>
-							<name>getMethodes</name>
-							<type>List</type>
-							<parameters>
-							</parameters>
-							<visibility>public</visibility>
-						</methode>
-						<methode>
-							<name>setMethodes</name>
-							<type>void</type>
-							<parameters>
-								<parameter>
-									<name>arg0</name>
-									<type>List</type>
-									<visibility>null</visibility>
-								</parameter>
-							</parameters>
-							<visibility>public</visibility>
-						</methode>
-						<methode>
 							<name>setSuperClass</name>
 							<type>void</type>
 							<parameters>
 								<parameter>
 									<name>arg0</name>
 									<type>String</type>
+									<visibility>null</visibility>
+								</parameter>
+							</parameters>
+							<visibility>public</visibility>
+						</methode>
+						<methode>
+							<name>setExtensionChain</name>
+							<type>void</type>
+							<parameters>
+								<parameter>
+									<name>arg0</name>
+									<type>List</type>
 									<visibility>null</visibility>
 								</parameter>
 							</parameters>
@@ -660,26 +731,67 @@
 							<visibility>public</visibility>
 						</methode>
 						<methode>
-							<name>getVisbility</name>
-							<type>String</type>
+							<name>setInterfaces</name>
+							<type>void</type>
 							<parameters>
+								<parameter>
+									<name>arg0</name>
+									<type>List</type>
+									<visibility>null</visibility>
+								</parameter>
 							</parameters>
 							<visibility>public</visibility>
 						</methode>
 					</methodes>
-					<internClasses>
-					</internClasses>
-					<classHeader>public ClassModel extends Object</classHeader>
+					<aggregation>
+						<className>org.mql.java.models.PropertyModel
+						</className>
+						<className>org.mql.java.models.MethodModel
+						</className>
+						<className>org.mql.java.models.MethodModel
+						</className>
+						<className>org.mql.java.models.ClassModel
+						</className>
+					</aggregation>
+					<uses>
+						<className>org.mql.java.models.ClassModel
+						</className>
+						<className>org.mql.java.models.PropertyModel
+						</className>
+						<className>org.mql.java.models.ClassModel
+						</className>
+						<className>org.mql.java.models.MethodModel
+						</className>
+						<className>org.mql.java.models.PropertyModel
+						</className>
+						<className>org.mql.java.models.MethodModel
+						</className>
+						<className>org.mql.java.models.ClassModel
+						</className>
+						<className>org.mql.java.models.MethodModel
+						</className>
+						<className>java.lang.String
+						</className>
+						<className>java.lang.String
+						</className>
+						<className>org.mql.java.models.MethodModel
+						</className>
+						<className>java.lang.String
+						</className>
+						<className>org.mql.java.models.MethodModel
+						</className>
+						<className>java.lang.String
+						</className>
+					</uses>
+					<internClasses />
 				</class>
-				<class>
-					<visbility>public</visbility>
-					<name>MethodModel</name>
-					<superClass>Object</superClass>
+				<class className='MethodModel' vidisility='public'
+					superClass='Object'>
 					<inheritanceChain>
 						<className>Object</className>
 					</inheritanceChain>
-					<interfaces>
-					</interfaces>
+					<interfaces />
+
 					<properties>
 						<property>
 							<name>name</name>
@@ -705,7 +817,7 @@
 					<constructors>
 						<constructor>
 							<name>MethodModel</name>
-							<type></type>
+							<type />
 							<parameters>
 								<parameter>
 									<name>arg0</name>
@@ -727,7 +839,7 @@
 						</constructor>
 						<constructor>
 							<name>MethodModel</name>
-							<type></type>
+							<type />
 							<parameters>
 								<parameter>
 									<name>arg0</name>
@@ -754,14 +866,14 @@
 						</constructor>
 						<constructor>
 							<name>MethodModel</name>
-							<type></type>
-							<parameters>
-							</parameters>
+							<type />
+							<parameters />
+
 							<visibility>public</visibility>
 						</constructor>
 						<constructor>
 							<name>MethodModel</name>
-							<type></type>
+							<type />
 							<parameters>
 								<parameter>
 									<name>arg0</name>
@@ -781,8 +893,8 @@
 						<methode>
 							<name>getName</name>
 							<type>String</type>
-							<parameters>
-							</parameters>
+							<parameters />
+
 							<visibility>public</visibility>
 						</methode>
 						<methode>
@@ -800,15 +912,15 @@
 						<methode>
 							<name>getType</name>
 							<type>String</type>
-							<parameters>
-							</parameters>
+							<parameters />
+
 							<visibility>public</visibility>
 						</methode>
 						<methode>
 							<name>getParameters</name>
 							<type>List</type>
-							<parameters>
-							</parameters>
+							<parameters />
+
 							<visibility>public</visibility>
 						</methode>
 						<methode>
@@ -826,8 +938,8 @@
 						<methode>
 							<name>getVisibility</name>
 							<type>String</type>
-							<parameters>
-							</parameters>
+							<parameters />
+
 							<visibility>public</visibility>
 						</methode>
 						<methode>
@@ -855,18 +967,6 @@
 							<visibility>public</visibility>
 						</methode>
 						<methode>
-							<name>setVisibility</name>
-							<type>void</type>
-							<parameters>
-								<parameter>
-									<name>arg0</name>
-									<type>String</type>
-									<visibility>null</visibility>
-								</parameter>
-							</parameters>
-							<visibility>public</visibility>
-						</methode>
-						<methode>
 							<name>setType</name>
 							<type>void</type>
 							<parameters>
@@ -878,20 +978,42 @@
 							</parameters>
 							<visibility>public</visibility>
 						</methode>
+						<methode>
+							<name>setVisibility</name>
+							<type>void</type>
+							<parameters>
+								<parameter>
+									<name>arg0</name>
+									<type>String</type>
+									<visibility>null</visibility>
+								</parameter>
+							</parameters>
+							<visibility>public</visibility>
+						</methode>
 					</methodes>
-					<internClasses>
-					</internClasses>
-					<classHeader>public MethodModel extends Object</classHeader>
+					<aggregation>
+						<className>org.mql.java.models.PropertyModel
+						</className>
+					</aggregation>
+					<uses>
+						<className>org.mql.java.models.MethodModel
+						</className>
+						<className>org.mql.java.models.PropertyModel
+						</className>
+						<className>org.mql.java.models.PropertyModel
+						</className>
+						<className>org.mql.java.models.PropertyModel
+						</className>
+					</uses>
+					<internClasses />
 				</class>
-				<class>
-					<visbility>public</visbility>
-					<name>PackageModel</name>
-					<superClass>Object</superClass>
+				<class className='PackageModel' vidisility='public'
+					superClass='Object'>
 					<inheritanceChain>
 						<className>Object</className>
 					</inheritanceChain>
-					<interfaces>
-					</interfaces>
+					<interfaces />
+
 					<properties>
 						<property>
 							<name>packageName</name>
@@ -912,7 +1034,7 @@
 					<constructors>
 						<constructor>
 							<name>PackageModel</name>
-							<type></type>
+							<type />
 							<parameters>
 								<parameter>
 									<name>arg0</name>
@@ -934,7 +1056,7 @@
 						</constructor>
 						<constructor>
 							<name>PackageModel</name>
-							<type></type>
+							<type />
 							<parameters>
 								<parameter>
 									<name>arg0</name>
@@ -951,9 +1073,9 @@
 						</constructor>
 						<constructor>
 							<name>PackageModel</name>
-							<type></type>
-							<parameters>
-							</parameters>
+							<type />
+							<parameters />
+
 							<visibility>public</visibility>
 						</constructor>
 					</constructors>
@@ -961,15 +1083,15 @@
 						<methode>
 							<name>getPackageName</name>
 							<type>String</type>
-							<parameters>
-							</parameters>
+							<parameters />
+
 							<visibility>public</visibility>
 						</methode>
 						<methode>
 							<name>getClasses</name>
 							<type>List</type>
-							<parameters>
-							</parameters>
+							<parameters />
+
 							<visibility>public</visibility>
 						</methode>
 						<methode>
@@ -985,6 +1107,13 @@
 							<visibility>public</visibility>
 						</methode>
 						<methode>
+							<name>getQualifiedName</name>
+							<type>String</type>
+							<parameters />
+
+							<visibility>public</visibility>
+						</methode>
+						<methode>
 							<name>toXml</name>
 							<type>String</type>
 							<parameters>
@@ -997,26 +1126,7 @@
 							<visibility>public</visibility>
 						</methode>
 						<methode>
-							<name>getQualifiedName</name>
-							<type>String</type>
-							<parameters>
-							</parameters>
-							<visibility>public</visibility>
-						</methode>
-						<methode>
 							<name>setPackageName</name>
-							<type>void</type>
-							<parameters>
-								<parameter>
-									<name>arg0</name>
-									<type>String</type>
-									<visibility>null</visibility>
-								</parameter>
-							</parameters>
-							<visibility>public</visibility>
-						</methode>
-						<methode>
-							<name>setQualifiedName</name>
 							<type>void</type>
 							<parameters>
 								<parameter>
@@ -1039,20 +1149,42 @@
 							</parameters>
 							<visibility>public</visibility>
 						</methode>
+						<methode>
+							<name>setQualifiedName</name>
+							<type>void</type>
+							<parameters>
+								<parameter>
+									<name>arg0</name>
+									<type>String</type>
+									<visibility>null</visibility>
+								</parameter>
+							</parameters>
+							<visibility>public</visibility>
+						</methode>
 					</methodes>
-					<internClasses>
-					</internClasses>
-					<classHeader>public PackageModel extends Object</classHeader>
+					<aggregation>
+						<className>org.mql.java.models.ClassModel
+						</className>
+					</aggregation>
+					<uses>
+						<className>org.mql.java.models.ClassModel
+						</className>
+						<className>org.mql.java.models.PackageModel
+						</className>
+						<className>org.mql.java.models.ClassModel
+						</className>
+						<className>org.mql.java.models.ClassModel
+						</className>
+					</uses>
+					<internClasses />
 				</class>
-				<class>
-					<visbility>public</visbility>
-					<name>ProjectModel</name>
-					<superClass>Object</superClass>
+				<class className='ProjectModel' vidisility='public'
+					superClass='Object'>
 					<inheritanceChain>
 						<className>Object</className>
 					</inheritanceChain>
-					<interfaces>
-					</interfaces>
+					<interfaces />
+
 					<properties>
 						<property>
 							<name>projectName</name>
@@ -1068,14 +1200,14 @@
 					<constructors>
 						<constructor>
 							<name>ProjectModel</name>
-							<type></type>
-							<parameters>
-							</parameters>
+							<type />
+							<parameters />
+
 							<visibility>public</visibility>
 						</constructor>
 						<constructor>
 							<name>ProjectModel</name>
-							<type></type>
+							<type />
 							<parameters>
 								<parameter>
 									<name>arg0</name>
@@ -1090,8 +1222,8 @@
 						<methode>
 							<name>getPackages</name>
 							<type>List</type>
-							<parameters>
-							</parameters>
+							<parameters />
+
 							<visibility>public</visibility>
 						</methode>
 						<methode>
@@ -1101,30 +1233,6 @@
 								<parameter>
 									<name>arg0</name>
 									<type>ProjectModel</type>
-									<visibility>null</visibility>
-								</parameter>
-							</parameters>
-							<visibility>public</visibility>
-						</methode>
-						<methode>
-							<name>setProjectName</name>
-							<type>void</type>
-							<parameters>
-								<parameter>
-									<name>arg0</name>
-									<type>String</type>
-									<visibility>null</visibility>
-								</parameter>
-							</parameters>
-							<visibility>public</visibility>
-						</methode>
-						<methode>
-							<name>setPackages</name>
-							<type>void</type>
-							<parameters>
-								<parameter>
-									<name>arg0</name>
-									<type>List</type>
 									<visibility>null</visibility>
 								</parameter>
 							</parameters>
@@ -1143,26 +1251,58 @@
 							<visibility>public</visibility>
 						</methode>
 						<methode>
+							<name>setProjectName</name>
+							<type>void</type>
+							<parameters>
+								<parameter>
+									<name>arg0</name>
+									<type>String</type>
+									<visibility>null</visibility>
+								</parameter>
+							</parameters>
+							<visibility>public</visibility>
+						</methode>
+						<methode>
 							<name>getProjectName</name>
 							<type>String</type>
+							<parameters />
+
+							<visibility>public</visibility>
+						</methode>
+						<methode>
+							<name>setPackages</name>
+							<type>void</type>
 							<parameters>
+								<parameter>
+									<name>arg0</name>
+									<type>List</type>
+									<visibility>null</visibility>
+								</parameter>
 							</parameters>
 							<visibility>public</visibility>
 						</methode>
 					</methodes>
-					<internClasses>
-					</internClasses>
-					<classHeader>public ProjectModel extends Object</classHeader>
+					<aggregation>
+						<className>org.mql.java.models.PackageModel
+						</className>
+					</aggregation>
+					<uses>
+						<className>org.mql.java.models.ProjectModel
+						</className>
+						<className>org.mql.java.models.PackageModel
+						</className>
+						<className>org.mql.java.models.PackageModel
+						</className>
+					</uses>
+					<internClasses />
 				</class>
-				<class>
-					<visbility>public</visbility>
-					<name>PropertyModel</name>
-					<superClass>Object</superClass>
+				<class className='PropertyModel' vidisility='public'
+					superClass='Object'>
 					<inheritanceChain>
 						<className>Object</className>
 					</inheritanceChain>
-					<interfaces>
-					</interfaces>
+					<interfaces />
+
 					<properties>
 						<property>
 							<name>name</name>
@@ -1183,14 +1323,14 @@
 					<constructors>
 						<constructor>
 							<name>PropertyModel</name>
-							<type></type>
-							<parameters>
-							</parameters>
+							<type />
+							<parameters />
+
 							<visibility>public</visibility>
 						</constructor>
 						<constructor>
 							<name>PropertyModel</name>
-							<type></type>
+							<type />
 							<parameters>
 								<parameter>
 									<name>arg0</name>
@@ -1212,7 +1352,7 @@
 						</constructor>
 						<constructor>
 							<name>PropertyModel</name>
-							<type></type>
+							<type />
 							<parameters>
 								<parameter>
 									<name>arg0</name>
@@ -1232,8 +1372,8 @@
 						<methode>
 							<name>getName</name>
 							<type>String</type>
-							<parameters>
-							</parameters>
+							<parameters />
+
 							<visibility>public</visibility>
 						</methode>
 						<methode>
@@ -1251,8 +1391,8 @@
 						<methode>
 							<name>getType</name>
 							<type>String</type>
-							<parameters>
-							</parameters>
+							<parameters />
+
 							<visibility>public</visibility>
 						</methode>
 						<methode>
@@ -1270,7 +1410,19 @@
 						<methode>
 							<name>getVisibility</name>
 							<type>String</type>
+							<parameters />
+
+							<visibility>public</visibility>
+						</methode>
+						<methode>
+							<name>setType</name>
+							<type>void</type>
 							<parameters>
+								<parameter>
+									<name>arg0</name>
+									<type>String</type>
+									<visibility>null</visibility>
+								</parameter>
 							</parameters>
 							<visibility>public</visibility>
 						</methode>
@@ -1286,32 +1438,22 @@
 							</parameters>
 							<visibility>public</visibility>
 						</methode>
-						<methode>
-							<name>setType</name>
-							<type>void</type>
-							<parameters>
-								<parameter>
-									<name>arg0</name>
-									<type>String</type>
-									<visibility>null</visibility>
-								</parameter>
-							</parameters>
-							<visibility>public</visibility>
-						</methode>
 					</methodes>
-					<internClasses>
-					</internClasses>
-					<classHeader>public PropertyModel extends Object</classHeader>
+					<aggregation />
+
+					<uses>
+						<className>org.mql.java.models.PropertyModel
+						</className>
+					</uses>
+					<internClasses />
 				</class>
-				<class>
-					<visbility>public</visbility>
-					<name>Etudiant</name>
-					<superClass>Object</superClass>
+				<class className='Etudiant' vidisility='public'
+					superClass='Object'>
 					<inheritanceChain>
 						<className>Object</className>
 					</inheritanceChain>
-					<interfaces>
-					</interfaces>
+					<interfaces />
+
 					<properties>
 						<property>
 							<name>name</name>
@@ -1332,7 +1474,7 @@
 					<constructors>
 						<constructor>
 							<name>Etudiant</name>
-							<type></type>
+							<type />
 							<parameters>
 								<parameter>
 									<name>arg0</name>
@@ -1357,8 +1499,8 @@
 						<methode>
 							<name>getName</name>
 							<type>String</type>
-							<parameters>
-							</parameters>
+							<parameters />
+
 							<visibility>public</visibility>
 						</methode>
 						<methode>
@@ -1388,19 +1530,23 @@
 						<methode>
 							<name>getLastName</name>
 							<type>String</type>
-							<parameters>
-							</parameters>
+							<parameters />
+
 							<visibility>public</visibility>
 						</methode>
 					</methodes>
-					<internClasses>
-					</internClasses>
-					<classHeader>public Etudiant extends Object</classHeader>
+					<aggregation>
+						<className>org.mql.java.models.User
+						</className>
+					</aggregation>
+					<uses>
+						<className>org.mql.java.models.User
+						</className>
+					</uses>
+					<internClasses />
 				</class>
-				<class>
-					<visbility>public</visbility>
-					<name>User</name>
-					<superClass>JPanel</superClass>
+				<class className='User' vidisility='public'
+					superClass='JPanel'>
 					<inheritanceChain>
 						<className>JPanel</className>
 						<className>JComponent</className>
@@ -1438,18 +1584,43 @@
 							<type>Account</type>
 							<visibility>private</visibility>
 						</property>
+						<property>
+							<name>phones</name>
+							<type>List</type>
+							<visibility>private</visibility>
+						</property>
+						<property>
+							<name>accounts</name>
+							<type>List</type>
+							<visibility>private</visibility>
+						</property>
+						<property>
+							<name>test</name>
+							<type>Long</type>
+							<visibility>private</visibility>
+						</property>
+						<property>
+							<name>d</name>
+							<type>Double</type>
+							<visibility>private</visibility>
+						</property>
+						<property>
+							<name>i</name>
+							<type>Integer</type>
+							<visibility>private</visibility>
+						</property>
 					</properties>
 					<constructors>
 						<constructor>
 							<name>User</name>
-							<type></type>
-							<parameters>
-							</parameters>
+							<type />
+							<parameters />
+
 							<visibility>public</visibility>
 						</constructor>
 						<constructor>
 							<name>User</name>
-							<type></type>
+							<type />
 							<parameters>
 								<parameter>
 									<name>arg0</name>
@@ -1479,15 +1650,15 @@
 						<methode>
 							<name>run</name>
 							<type>void</type>
-							<parameters>
-							</parameters>
+							<parameters />
+
 							<visibility>public</visibility>
 						</methode>
 						<methode>
 							<name>getId</name>
 							<type>int</type>
-							<parameters>
-							</parameters>
+							<parameters />
+
 							<visibility>public</visibility>
 						</methode>
 						<methode>
@@ -1503,10 +1674,10 @@
 							<visibility>public</visibility>
 						</methode>
 						<methode>
-							<name>getFirstName</name>
+							<name>getLastName</name>
 							<type>String</type>
-							<parameters>
-							</parameters>
+							<parameters />
+
 							<visibility>public</visibility>
 						</methode>
 						<methode>
@@ -1522,10 +1693,29 @@
 							<visibility>public</visibility>
 						</methode>
 						<methode>
-							<name>getLastName</name>
-							<type>String</type>
+							<name>actionPerformed</name>
+							<type>void</type>
 							<parameters>
+								<parameter>
+									<name>arg0</name>
+									<type>ActionEvent</type>
+									<visibility>null</visibility>
+								</parameter>
 							</parameters>
+							<visibility>public</visibility>
+						</methode>
+						<methode>
+							<name>getFirstName</name>
+							<type>String</type>
+							<parameters />
+
+							<visibility>public</visibility>
+						</methode>
+						<methode>
+							<name>getAccount</name>
+							<type>Account</type>
+							<parameters />
+
 							<visibility>public</visibility>
 						</methode>
 						<methode>
@@ -1552,138 +1742,135 @@
 							</parameters>
 							<visibility>public</visibility>
 						</methode>
-						<methode>
-							<name>getAccount</name>
-							<type>Account</type>
-							<parameters>
-							</parameters>
-							<visibility>public</visibility>
-						</methode>
-						<methode>
-							<name>actionPerformed</name>
-							<type>void</type>
-							<parameters>
-								<parameter>
-									<name>arg0</name>
-									<type>ActionEvent</type>
-									<visibility>null</visibility>
-								</parameter>
-							</parameters>
-							<visibility>public</visibility>
-						</methode>
 					</methodes>
+					<aggregation>
+						<className>org.mql.java.models.Account
+						</className>
+						<className>org.mql.java.models.Account
+						</className>
+					</aggregation>
+					<uses>
+						<className>java.awt.event.ActionEvent
+						</className>
+						<className>org.mql.java.models.Account
+						</className>
+						<className>org.mql.java.models.Account
+						</className>
+					</uses>
 					<internClasses>
 						<internClass>
-							<visbility>public</visbility>
-							<name>Etudiant</name>
-							<superClass>Object</superClass>
-							<inheritanceChain>
-								<className>Object</className>
-							</inheritanceChain>
-							<interfaces>
-							</interfaces>
-							<properties>
-								<property>
-									<name>name</name>
-									<type>String</type>
-									<visibility>private</visibility>
-								</property>
-								<property>
-									<name>lastName</name>
-									<type>String</type>
-									<visibility>private</visibility>
-								</property>
-								<property>
-									<name>this$0</name>
-									<type>User</type>
-									<visibility>final</visibility>
-								</property>
-							</properties>
-							<constructors>
-								<constructor>
-									<name>Etudiant</name>
-									<type></type>
-									<parameters>
-										<parameter>
-											<name>arg0</name>
-											<type>User</type>
-											<visibility>null</visibility>
-										</parameter>
-										<parameter>
-											<name>arg1</name>
-											<type>String</type>
-											<visibility>null</visibility>
-										</parameter>
-										<parameter>
-											<name>arg2</name>
-											<type>String</type>
-											<visibility>null</visibility>
-										</parameter>
-									</parameters>
-									<visibility>public</visibility>
-								</constructor>
-							</constructors>
-							<methodes>
-								<methode>
-									<name>getName</name>
-									<type>String</type>
-									<parameters>
-									</parameters>
-									<visibility>public</visibility>
-								</methode>
-								<methode>
-									<name>setName</name>
-									<type>void</type>
-									<parameters>
-										<parameter>
-											<name>arg0</name>
-											<type>String</type>
-											<visibility>null</visibility>
-										</parameter>
-									</parameters>
-									<visibility>public</visibility>
-								</methode>
-								<methode>
-									<name>setLastName</name>
-									<type>void</type>
-									<parameters>
-										<parameter>
-											<name>arg0</name>
-											<type>String</type>
-											<visibility>null</visibility>
-										</parameter>
-									</parameters>
-									<visibility>public</visibility>
-								</methode>
-								<methode>
-									<name>getLastName</name>
-									<type>String</type>
-									<parameters>
-									</parameters>
-									<visibility>public</visibility>
-								</methode>
-							</methodes>
-							<internClasses>
-							</internClasses>
-							<classHeader>public Etudiant extends Object</classHeader>
+							<class className='Etudiant' vidisility='public'
+								superClass='Object'>
+								<inheritanceChain>
+									<className>Object</className>
+								</inheritanceChain>
+								<interfaces />
+
+								<properties>
+									<property>
+										<name>name</name>
+										<type>String</type>
+										<visibility>private</visibility>
+									</property>
+									<property>
+										<name>lastName</name>
+										<type>String</type>
+										<visibility>private</visibility>
+									</property>
+									<property>
+										<name>this$0</name>
+										<type>User</type>
+										<visibility>final</visibility>
+									</property>
+								</properties>
+								<constructors>
+									<constructor>
+										<name>Etudiant</name>
+										<type />
+										<parameters>
+											<parameter>
+												<name>arg0</name>
+												<type>User</type>
+												<visibility>null</visibility>
+											</parameter>
+											<parameter>
+												<name>arg1</name>
+												<type>String</type>
+												<visibility>null</visibility>
+											</parameter>
+											<parameter>
+												<name>arg2</name>
+												<type>String</type>
+												<visibility>null</visibility>
+											</parameter>
+										</parameters>
+										<visibility>public</visibility>
+									</constructor>
+								</constructors>
+								<methodes>
+									<methode>
+										<name>getName</name>
+										<type>String</type>
+										<parameters />
+
+										<visibility>public</visibility>
+									</methode>
+									<methode>
+										<name>setName</name>
+										<type>void</type>
+										<parameters>
+											<parameter>
+												<name>arg0</name>
+												<type>String</type>
+												<visibility>null</visibility>
+											</parameter>
+										</parameters>
+										<visibility>public</visibility>
+									</methode>
+									<methode>
+										<name>setLastName</name>
+										<type>void</type>
+										<parameters>
+											<parameter>
+												<name>arg0</name>
+												<type>String</type>
+												<visibility>null</visibility>
+											</parameter>
+										</parameters>
+										<visibility>public</visibility>
+									</methode>
+									<methode>
+										<name>getLastName</name>
+										<type>String</type>
+										<parameters />
+
+										<visibility>public</visibility>
+									</methode>
+								</methodes>
+								<aggregation>
+									<className>org.mql.java.models.User
+									</className>
+								</aggregation>
+								<uses>
+									<className>org.mql.java.models.User
+									</className>
+								</uses>
+								<internClasses />
+							</class>
 						</internClass>
 					</internClasses>
-					<classHeader>public User extends JPanel implements Runnable,
-						ActionListener</classHeader>
 				</class>
 			</classes>
 		</package>
 		<package qualifiedName='org.mql.java.reflection'>
 			<classes>
-				<class>
-					<visbility>public</visbility>
-					<name>ClassExplorer</name>
-					<superClass>Object</superClass>
+				<class className='ClassExplorer' vidisility='public'
+					superClass='Object'>
 					<inheritanceChain>
 						<className>Object</className>
 					</inheritanceChain>
-					<interfaces>
-					</interfaces>
+					<interfaces />
+
 					<properties>
 						<property>
 							<name>packageName</name>
@@ -1699,7 +1886,7 @@
 					<constructors>
 						<constructor>
 							<name>ClassExplorer</name>
-							<type></type>
+							<type />
 							<parameters>
 								<parameter>
 									<name>arg0</name>
@@ -1726,24 +1913,26 @@
 						<methode>
 							<name>getClassList</name>
 							<type>String[]</type>
-							<parameters>
-							</parameters>
+							<parameters />
+
 							<visibility>public</visibility>
 						</methode>
 					</methodes>
-					<internClasses>
-					</internClasses>
-					<classHeader>public ClassExplorer extends Object</classHeader>
+					<aggregation />
+
+					<uses>
+						<className>[Ljava.io.File;
+						</className>
+					</uses>
+					<internClasses />
 				</class>
-				<class>
-					<visbility>public</visbility>
-					<name>ClassParser</name>
-					<superClass>Object</superClass>
+				<class className='ClassParser' vidisility='public'
+					superClass='Object'>
 					<inheritanceChain>
 						<className>Object</className>
 					</inheritanceChain>
-					<interfaces>
-					</interfaces>
+					<interfaces />
+
 					<properties>
 						<property>
 							<name>cls</name>
@@ -1764,7 +1953,7 @@
 					<constructors>
 						<constructor>
 							<name>ClassParser</name>
-							<type></type>
+							<type />
 							<parameters>
 								<parameter>
 									<name>arg0</name>
@@ -1779,36 +1968,36 @@
 						<methode>
 							<name>getAnnotation</name>
 							<type>void</type>
-							<parameters>
-							</parameters>
+							<parameters />
+
 							<visibility>private</visibility>
 						</methode>
 						<methode>
 							<name>getProperties</name>
 							<type>void</type>
-							<parameters>
-							</parameters>
+							<parameters />
+
 							<visibility>private</visibility>
 						</methode>
 						<methode>
 							<name>getConstructorsCount</name>
 							<type>int</type>
-							<parameters>
-							</parameters>
+							<parameters />
+
 							<visibility>public</visibility>
 						</methode>
 						<methode>
 							<name>getInternClassessCount</name>
 							<type>int</type>
-							<parameters>
-							</parameters>
+							<parameters />
+
 							<visibility>public</visibility>
 						</methode>
 						<methode>
 							<name>getMyClass</name>
 							<type>ClassModel</type>
-							<parameters>
-							</parameters>
+							<parameters />
+
 							<visibility>public</visibility>
 						</methode>
 						<methode>
@@ -1824,25 +2013,67 @@
 							<visibility>private</visibility>
 						</methode>
 						<methode>
-							<name>getAllConstructors</name>
+							<name>getIntenrClassess</name>
 							<type>void</type>
-							<parameters>
-							</parameters>
+							<parameters />
+
+							<visibility>public</visibility>
+						</methode>
+						<methode>
+							<name>showInConsole</name>
+							<type>void</type>
+							<parameters />
+
+							<visibility>public</visibility>
+						</methode>
+						<methode>
+							<name>getMethodCount</name>
+							<type>int</type>
+							<parameters />
+
+							<visibility>public</visibility>
+						</methode>
+						<methode>
+							<name>showProperties</name>
+							<type>void</type>
+							<parameters />
+
 							<visibility>private</visibility>
 						</methode>
 						<methode>
-							<name>getIntenrClassess</name>
+							<name>showClassHeader</name>
+							<type>String</type>
+							<parameters />
+
+							<visibility>private</visibility>
+						</methode>
+						<methode>
+							<name>getAllConstructors</name>
 							<type>void</type>
-							<parameters>
-							</parameters>
-							<visibility>public</visibility>
+							<parameters />
+
+							<visibility>private</visibility>
 						</methode>
 						<methode>
 							<name>getAllMethodes</name>
 							<type>void</type>
-							<parameters>
-							</parameters>
+							<parameters />
+
 							<visibility>private</visibility>
+						</methode>
+						<methode>
+							<name>getInterfacesCount</name>
+							<type>int</type>
+							<parameters />
+
+							<visibility>public</visibility>
+						</methode>
+						<methode>
+							<name>getPropertiesCount</name>
+							<type>int</type>
+							<parameters />
+
+							<visibility>public</visibility>
 						</methode>
 						<methode>
 							<name>getExtensionChain</name>
@@ -1857,89 +2088,81 @@
 							<visibility>public</visibility>
 						</methode>
 						<methode>
-							<name>showClassHeader</name>
-							<type>String</type>
-							<parameters>
-							</parameters>
-							<visibility>private</visibility>
-						</methode>
-						<methode>
-							<name>getPropertiesCount</name>
-							<type>int</type>
-							<parameters>
-							</parameters>
-							<visibility>public</visibility>
-						</methode>
-						<methode>
-							<name>showConstructors</name>
+							<name>getUses</name>
 							<type>void</type>
 							<parameters>
+								<parameter>
+									<name>arg0</name>
+									<type>Parameter</type>
+									<visibility>null</visibility>
+								</parameter>
 							</parameters>
 							<visibility>private</visibility>
 						</methode>
 						<methode>
 							<name>showInternClassess</name>
 							<type>void</type>
+							<parameters />
+
+							<visibility>private</visibility>
+						</methode>
+						<methode>
+							<name>getAgregation</name>
+							<type>void</type>
 							<parameters>
+								<parameter>
+									<name>arg0</name>
+									<type>Field</type>
+									<visibility>null</visibility>
+								</parameter>
 							</parameters>
 							<visibility>private</visibility>
 						</methode>
 						<methode>
 							<name>showMethodes</name>
 							<type>void</type>
-							<parameters>
-							</parameters>
+							<parameters />
+
 							<visibility>private</visibility>
 						</methode>
 						<methode>
-							<name>getMethodCount</name>
-							<type>int</type>
-							<parameters>
-							</parameters>
-							<visibility>public</visibility>
-						</methode>
-						<methode>
-							<name>showProperties</name>
+							<name>showConstructors</name>
 							<type>void</type>
-							<parameters>
-							</parameters>
+							<parameters />
+
 							<visibility>private</visibility>
-						</methode>
-						<methode>
-							<name>showInConsole</name>
-							<type>void</type>
-							<parameters>
-							</parameters>
-							<visibility>public</visibility>
 						</methode>
 						<methode>
 							<name>showInSwing</name>
 							<type>void</type>
-							<parameters>
-							</parameters>
-							<visibility>public</visibility>
-						</methode>
-						<methode>
-							<name>getInterfacesCount</name>
-							<type>int</type>
-							<parameters>
-							</parameters>
+							<parameters />
+
 							<visibility>public</visibility>
 						</methode>
 					</methodes>
-					<internClasses>
-					</internClasses>
-					<classHeader>public ClassParser extends Object</classHeader>
+					<aggregation>
+						<className>java.lang.Class
+						</className>
+						<className>org.mql.java.models.ClassModel
+						</className>
+						<className>org.mql.java.models.PackageModel
+						</className>
+					</aggregation>
+					<uses>
+						<className>java.lang.reflect.Parameter
+						</className>
+						<className>java.lang.reflect.Field
+						</className>
+					</uses>
+					<internClasses />
 				</class>
-				<class>
-					<visbility>public</visbility>
-					<name>PackageExplorer</name>
-					<superClass>Object</superClass>
+				<class className='PackageExplorer' vidisility='public'
+					superClass='Object'>
 					<inheritanceChain>
 						<className>Object</className>
 					</inheritanceChain>
-					<interfaces>
-					</interfaces>
+					<interfaces />
+
 					<properties>
 						<property>
 							<name>project</name>
@@ -1950,7 +2173,7 @@
 					<constructors>
 						<constructor>
 							<name>PackageExplorer</name>
-							<type></type>
+							<type />
 							<parameters>
 								<parameter>
 									<name>arg0</name>
@@ -1977,33 +2200,37 @@
 						<methode>
 							<name>addClassesToPackages</name>
 							<type>void</type>
-							<parameters>
-							</parameters>
+							<parameters />
+
 							<visibility>private</visibility>
 						</methode>
 						<methode>
 							<name>getProject</name>
 							<type>ProjectModel</type>
-							<parameters>
-							</parameters>
+							<parameters />
+
 							<visibility>public</visibility>
 						</methode>
 					</methodes>
-					<internClasses>
-					</internClasses>
-					<classHeader>public PackageExplorer extends Object</classHeader>
+					<aggregation>
+						<className>org.mql.java.models.ProjectModel
+						</className>
+					</aggregation>
+					<uses>
+						<className>[Ljava.io.File;
+						</className>
+					</uses>
+					<internClasses />
 				</class>
 			</classes>
 		</package>
 		<package qualifiedName='org.mql.java.reflection.test'>
-			<classes></classes>
+			<classes />
 		</package>
 		<package qualifiedName='org.mql.java.ui'>
 			<classes>
-				<class>
-					<visbility>public</visbility>
-					<name>ClassNameFrame</name>
-					<superClass>JFrame</superClass>
+				<class className='ClassNameFrame' vidisility='public'
+					superClass='JFrame'>
 					<inheritanceChain>
 						<className>JFrame</className>
 						<className>Frame</className>
@@ -2012,8 +2239,8 @@
 						<className>Component</className>
 						<className>Object</className>
 					</inheritanceChain>
-					<interfaces>
-					</interfaces>
+					<interfaces />
+
 					<properties>
 						<property>
 							<name>serialVersionUID</name>
@@ -2029,9 +2256,9 @@
 					<constructors>
 						<constructor>
 							<name>ClassNameFrame</name>
-							<type></type>
-							<parameters>
-							</parameters>
+							<type />
+							<parameters />
+
 							<visibility>public</visibility>
 						</constructor>
 					</constructors>
@@ -2049,14 +2276,18 @@
 							<visibility>public static</visibility>
 						</methode>
 					</methodes>
-					<internClasses>
-					</internClasses>
-					<classHeader>public ClassNameFrame extends JFrame</classHeader>
+					<aggregation>
+						<className>org.mql.java.ui.ClassNamePanel
+						</className>
+					</aggregation>
+					<uses>
+						<className>[Ljava.lang.String;
+						</className>
+					</uses>
+					<internClasses />
 				</class>
-				<class>
-					<visbility></visbility>
-					<name>BtnListener</name>
-					<superClass>Object</superClass>
+				<class className='BtnListener' vidisility=''
+					superClass='Object'>
 					<inheritanceChain>
 						<className>Object</className>
 					</inheritanceChain>
@@ -2073,7 +2304,7 @@
 					<constructors>
 						<constructor>
 							<name>BtnListener</name>
-							<type></type>
+							<type />
 							<parameters>
 								<parameter>
 									<name>arg0</name>
@@ -2081,7 +2312,7 @@
 									<visibility>null</visibility>
 								</parameter>
 							</parameters>
-							<visibility></visibility>
+							<visibility />
 						</constructor>
 					</constructors>
 					<methodes>
@@ -2098,15 +2329,20 @@
 							<visibility>public</visibility>
 						</methode>
 					</methodes>
-					<internClasses>
-					</internClasses>
-					<classHeader> BtnListener extends Object implements ActionListener
-					</classHeader>
+					<aggregation>
+						<className>org.mql.java.ui.ClassNamePanel
+						</className>
+					</aggregation>
+					<uses>
+						<className>java.awt.event.ActionEvent
+						</className>
+						<className>org.mql.java.ui.ClassNamePanel
+						</className>
+					</uses>
+					<internClasses />
 				</class>
-				<class>
-					<visbility>public</visbility>
-					<name>ClassNamePanel</name>
-					<superClass>JPanel</superClass>
+				<class className='ClassNamePanel' vidisility='public'
+					superClass='JPanel'>
 					<inheritanceChain>
 						<className>JPanel</className>
 						<className>JComponent</className>
@@ -2114,8 +2350,8 @@
 						<className>Component</className>
 						<className>Object</className>
 					</inheritanceChain>
-					<interfaces>
-					</interfaces>
+					<interfaces />
+
 					<properties>
 						<property>
 							<name>label</name>
@@ -2141,9 +2377,9 @@
 					<constructors>
 						<constructor>
 							<name>ClassNamePanel</name>
-							<type></type>
-							<parameters>
-							</parameters>
+							<type />
+							<parameters />
+
 							<visibility>public</visibility>
 						</constructor>
 					</constructors>
@@ -2151,69 +2387,83 @@
 						<methode>
 							<name>getText</name>
 							<type>String</type>
-							<parameters>
-							</parameters>
+							<parameters />
+
 							<visibility>public</visibility>
 						</methode>
 					</methodes>
+					<aggregation>
+						<className>javax.swing.JLabel
+						</className>
+						<className>javax.swing.JTextField
+						</className>
+						<className>javax.swing.JButton
+						</className>
+					</aggregation>
+					<uses />
+
 					<internClasses>
 						<internClass>
-							<visbility></visbility>
-							<name>BtnListener</name>
-							<superClass>Object</superClass>
-							<inheritanceChain>
-								<className>Object</className>
-							</inheritanceChain>
-							<interfaces>
-								<interface>ActionListener</interface>
-							</interfaces>
-							<properties>
-								<property>
-									<name>this$0</name>
-									<type>ClassNamePanel</type>
-									<visibility>final</visibility>
-								</property>
-							</properties>
-							<constructors>
-								<constructor>
-									<name>BtnListener</name>
-									<type></type>
-									<parameters>
-										<parameter>
-											<name>arg0</name>
-											<type>ClassNamePanel</type>
-											<visibility>null</visibility>
-										</parameter>
-									</parameters>
-									<visibility></visibility>
-								</constructor>
-							</constructors>
-							<methodes>
-								<methode>
-									<name>actionPerformed</name>
-									<type>void</type>
-									<parameters>
-										<parameter>
-											<name>arg0</name>
-											<type>ActionEvent</type>
-											<visibility>null</visibility>
-										</parameter>
-									</parameters>
-									<visibility>public</visibility>
-								</methode>
-							</methodes>
-							<internClasses>
-							</internClasses>
-							<classHeader> BtnListener extends Object implements
-								ActionListener</classHeader>
+							<class className='BtnListener' vidisility=''
+								superClass='Object'>
+								<inheritanceChain>
+									<className>Object</className>
+								</inheritanceChain>
+								<interfaces>
+									<interface>ActionListener</interface>
+								</interfaces>
+								<properties>
+									<property>
+										<name>this$0</name>
+										<type>ClassNamePanel</type>
+										<visibility>final</visibility>
+									</property>
+								</properties>
+								<constructors>
+									<constructor>
+										<name>BtnListener</name>
+										<type />
+										<parameters>
+											<parameter>
+												<name>arg0</name>
+												<type>ClassNamePanel</type>
+												<visibility>null</visibility>
+											</parameter>
+										</parameters>
+										<visibility />
+									</constructor>
+								</constructors>
+								<methodes>
+									<methode>
+										<name>actionPerformed</name>
+										<type>void</type>
+										<parameters>
+											<parameter>
+												<name>arg0</name>
+												<type>ActionEvent</type>
+												<visibility>null</visibility>
+											</parameter>
+										</parameters>
+										<visibility>public</visibility>
+									</methode>
+								</methodes>
+								<aggregation>
+									<className>org.mql.java.ui.ClassNamePanel
+									</className>
+								</aggregation>
+								<uses>
+									<className>java.awt.event.ActionEvent
+									</className>
+									<className>org.mql.java.ui.ClassNamePanel
+									</className>
+								</uses>
+								<internClasses />
+							</class>
 						</internClass>
 					</internClasses>
-					<classHeader>public ClassNamePanel extends JPanel</classHeader>
 				</class>
-				<class>
-					<visbility>public</visbility>
-					<name>InformationPanel</name>
-					<superClass>JPanel</superClass>
+				<class className='InformationPanel' vidisility='public'
+					superClass='JPanel'>
 					<inheritanceChain>
 						<className>JPanel</className>
 						<className>JComponent</className>
@@ -2221,8 +2471,8 @@
 						<className>Component</className>
 						<className>Object</className>
 					</inheritanceChain>
-					<interfaces>
-					</interfaces>
+					<interfaces />
+
 					<properties>
 						<property>
 							<name>interfacesCount</name>
@@ -2263,7 +2513,7 @@
 					<constructors>
 						<constructor>
 							<name>InformationPanel</name>
-							<type></type>
+							<type />
 							<parameters>
 								<parameter>
 									<name>arg0</name>
@@ -2274,16 +2524,30 @@
 							<visibility>public</visibility>
 						</constructor>
 					</constructors>
-					<methodes>
-					</methodes>
-					<internClasses>
-					</internClasses>
-					<classHeader>public InformationPanel extends JPanel</classHeader>
+					<methodes />
+
+					<aggregation>
+						<className>org.mql.java.ui.LabeledLabel
+						</className>
+						<className>org.mql.java.ui.LabeledLabel
+						</className>
+						<className>org.mql.java.ui.LabeledLabel
+						</className>
+						<className>org.mql.java.ui.LabeledLabel
+						</className>
+						<className>org.mql.java.ui.LabeledLabel
+						</className>
+						<className>org.mql.java.ui.LabeledLabel
+						</className>
+					</aggregation>
+					<uses>
+						<className>org.mql.java.reflection.ClassParser
+						</className>
+					</uses>
+					<internClasses />
 				</class>
-				<class>
-					<visbility>public</visbility>
-					<name>LabeledLabel</name>
-					<superClass>JPanel</superClass>
+				<class className='LabeledLabel' vidisility='public'
+					superClass='JPanel'>
 					<inheritanceChain>
 						<className>JPanel</className>
 						<className>JComponent</className>
@@ -2291,8 +2555,8 @@
 						<className>Component</className>
 						<className>Object</className>
 					</inheritanceChain>
-					<interfaces>
-					</interfaces>
+					<interfaces />
+
 					<properties>
 						<property>
 							<name>serialVersionUID</name>
@@ -2303,7 +2567,7 @@
 					<constructors>
 						<constructor>
 							<name>LabeledLabel</name>
-							<type></type>
+							<type />
 							<parameters>
 								<parameter>
 									<name>arg0</name>
@@ -2319,16 +2583,16 @@
 							<visibility>public</visibility>
 						</constructor>
 					</constructors>
-					<methodes>
-					</methodes>
-					<internClasses>
-					</internClasses>
-					<classHeader>public LabeledLabel extends JPanel</classHeader>
+					<methodes />
+
+					<aggregation />
+
+					<uses />
+
+					<internClasses />
 				</class>
-				<class>
-					<visbility>public</visbility>
-					<name>MainFrame</name>
-					<superClass>JFrame</superClass>
+				<class className='MainFrame' vidisility='public'
+					superClass='JFrame'>
 					<inheritanceChain>
 						<className>JFrame</className>
 						<className>Frame</className>
@@ -2337,8 +2601,8 @@
 						<className>Component</className>
 						<className>Object</className>
 					</inheritanceChain>
-					<interfaces>
-					</interfaces>
+					<interfaces />
+
 					<properties>
 						<property>
 							<name>serialVersionUID</name>
@@ -2354,7 +2618,7 @@
 					<constructors>
 						<constructor>
 							<name>MainFrame</name>
-							<type></type>
+							<type />
 							<parameters>
 								<parameter>
 									<name>arg0</name>
@@ -2365,16 +2629,20 @@
 							<visibility>public</visibility>
 						</constructor>
 					</constructors>
-					<methodes>
-					</methodes>
-					<internClasses>
-					</internClasses>
-					<classHeader>public MainFrame extends JFrame</classHeader>
+					<methodes />
+
+					<aggregation>
+						<className>org.mql.java.ui.MainPanel
+						</className>
+					</aggregation>
+					<uses>
+						<className>org.mql.java.reflection.ClassParser
+						</className>
+					</uses>
+					<internClasses />
 				</class>
-				<class>
-					<visbility>public</visbility>
-					<name>MainPanel</name>
-					<superClass>JPanel</superClass>
+				<class className='MainPanel' vidisility='public'
+					superClass='JPanel'>
 					<inheritanceChain>
 						<className>JPanel</className>
 						<className>JComponent</className>
@@ -2382,8 +2650,8 @@
 						<className>Component</className>
 						<className>Object</className>
 					</inheritanceChain>
-					<interfaces>
-					</interfaces>
+					<interfaces />
+
 					<properties>
 						<property>
 							<name>serialVersionUID</name>
@@ -2404,7 +2672,7 @@
 					<constructors>
 						<constructor>
 							<name>MainPanel</name>
-							<type></type>
+							<type />
 							<parameters>
 								<parameter>
 									<name>arg0</name>
@@ -2415,16 +2683,22 @@
 							<visibility>public</visibility>
 						</constructor>
 					</constructors>
-					<methodes>
-					</methodes>
-					<internClasses>
-					</internClasses>
-					<classHeader>public MainPanel extends JPanel</classHeader>
+					<methodes />
+
+					<aggregation>
+						<className>org.mql.java.ui.SquelettePanel
+						</className>
+						<className>org.mql.java.ui.InformationPanel
+						</className>
+					</aggregation>
+					<uses>
+						<className>org.mql.java.reflection.ClassParser
+						</className>
+					</uses>
+					<internClasses />
 				</class>
-				<class>
-					<visbility>public</visbility>
-					<name>SquelettePanel</name>
-					<superClass>JPanel</superClass>
+				<class className='SquelettePanel' vidisility='public'
+					superClass='JPanel'>
 					<inheritanceChain>
 						<className>JPanel</className>
 						<className>JComponent</className>
@@ -2432,8 +2706,8 @@
 						<className>Component</className>
 						<className>Object</className>
 					</inheritanceChain>
-					<interfaces>
-					</interfaces>
+					<interfaces />
+
 					<properties>
 						<property>
 							<name>serialVersionUID</name>
@@ -2469,7 +2743,7 @@
 					<constructors>
 						<constructor>
 							<name>SquelettePanel</name>
-							<type></type>
+							<type />
 							<parameters>
 								<parameter>
 									<name>arg0</name>
@@ -2494,13 +2768,6 @@
 							<visibility>private</visibility>
 						</methode>
 						<methode>
-							<name>addInterneClass</name>
-							<type>void</type>
-							<parameters>
-							</parameters>
-							<visibility>private</visibility>
-						</methode>
-						<methode>
 							<name>addProperties</name>
 							<type>void</type>
 							<parameters>
@@ -2510,6 +2777,13 @@
 									<visibility>null</visibility>
 								</parameter>
 							</parameters>
+							<visibility>private</visibility>
+						</methode>
+						<methode>
+							<name>addInterneClass</name>
+							<type>void</type>
+							<parameters />
+
 							<visibility>private</visibility>
 						</methode>
 						<methode>
@@ -2525,9 +2799,29 @@
 							<visibility>private</visibility>
 						</methode>
 					</methodes>
-					<internClasses>
-					</internClasses>
-					<classHeader>public SquelettePanel extends JPanel</classHeader>
+					<aggregation>
+						<className>java.awt.TextArea
+						</className>
+						<className>org.mql.java.models.ClassModel
+						</className>
+						<className>org.mql.java.models.PropertyModel
+						</className>
+						<className>org.mql.java.models.MethodModel
+						</className>
+						<className>org.mql.java.models.MethodModel
+						</className>
+					</aggregation>
+					<uses>
+						<className>org.mql.java.models.ClassModel
+						</className>
+						<className>org.mql.java.models.ClassModel
+						</className>
+						<className>org.mql.java.models.ClassModel
+						</className>
+						<className>org.mql.java.models.ClassModel
+						</className>
+					</uses>
+					<internClasses />
 				</class>
 			</classes>
 		</package>

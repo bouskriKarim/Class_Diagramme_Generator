@@ -8,7 +8,7 @@ import org.mql.java.reflection.ClassExplorer;
 public class Examples {
 
 	public Examples() {
-		exp04();
+		exp01();
 		//System.out.println(System.getProperty("java.class.path"));
 		}
 	
@@ -16,7 +16,8 @@ public class Examples {
 	//Affichage dans la console
 	private void exp01() {
 		ClassParser cls = new ClassParser("org.mql.java.models.User");
-		cls.showInConsole();
+		System.out.println(cls.getMyClass().getUses().get(1));
+		//cls.showInConsole();
 
 	}
 	

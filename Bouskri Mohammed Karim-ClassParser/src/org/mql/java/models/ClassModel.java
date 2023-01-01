@@ -16,6 +16,8 @@ public class ClassModel {
 	private List<MethodModel> methodes;
 	private List<ClassModel> internClass;
 	private String classHeader;
+	private List<String> aggregation;
+	private List<String> uses;
 
 	public ClassModel(String name , String superClass) {
 		
@@ -28,6 +30,18 @@ public class ClassModel {
 		methodes = new Vector<>();
 		internClass = new Vector<>();
 		extensionChain = new Vector<>();
+		aggregation = new Vector<>();
+		uses = new Vector<>();
+	}
+	
+	public void addAgregat(String className) 
+	{
+		aggregation.add(className);
+	}
+	
+	public void addUse(String className) 
+	{
+		uses.add(className);
 	}
 	
 	public void addInterface(String myInterface) 
@@ -148,85 +162,112 @@ public class ClassModel {
 		this.classHeader = classHeader;
 	}
 	
+	
+	public List<String> getAggregation() {
+		return aggregation;
+	}
+
+	public void setAggregation(List<String> aggregation) {
+		this.aggregation = aggregation;
+	}
+
+	public List<String> getUses() {
+		return uses;
+	}
+
+	public void setUses(List<String> uses) {
+		this.uses = uses;
+	}
+
 	public String toXML(ClassModel myClass) 
 	{	
 		String xmlFormat ="";
-		Field[] fields = this.getClass().getDeclaredFields();
+
+		xmlFormat +="\n<class className = '"+myClass.getName()+"' vidisility = '"+ myClass.getVisbility()+"' superClass = '"+myClass.getSuperClass()+"'>";
 		
-		for (Field field : fields) {
+		xmlFormat += "\n<inheritanceChain>";
+		List<String> inheritanceChain = myClass.getExtensionChain();
+		int inheritanceChainSize = inheritanceChain.size();
+		
+		for (int i = 0; i < inheritanceChainSize; i++) {
 			
-			if(field.getName().equals("extensionChain")) 
-			{
-				xmlFormat += "\n<inheritanceChain>";
-				for (int i = 0; i < myClass.getExtensionChain().size(); i++) {
-					
-					xmlFormat +="\n<className>"+myClass.getExtensionChain().get(i)+"</className>";
-				}
-				xmlFormat += "\n</inheritanceChain>";
-			}
-			else if(field.getName().equals("interfaces")) 
-			{
-				xmlFormat += "\n<interfaces>";
-				for (int i = 0; i < myClass.getInterfaces().size(); i++) {
-					
-					xmlFormat +="\n<interface>"+myClass.getInterfaces().get(i)+"</interface>";
-				}
-				xmlFormat += "\n</interfaces>";
-			}
-			else if(field.getName().equals("properties"))
-			{
-				xmlFormat += "\n<properties>";
-				for (int i = 0; i < myClass.getProperties().size(); i++) {
-					
-					xmlFormat +="\n<property>"+ myClass.getProperties().get(i).toXML(myClass.getProperties().get(i))+"\n</property>";
-					
-				}
-				xmlFormat += "\n</properties>";
-			}
-			else if(field.getName().equals("constructors")) 
-			{
-				xmlFormat += "\n<constructors>";
-				for (int i = 0; i < myClass.getConstructors().size(); i++) {
-					
-					xmlFormat +="\n<constructor>"+ myClass.getConstructors().get(i).toXML(myClass.getConstructors().get(i))+"\n</constructor>";
-					
-				}
-				xmlFormat += "\n</constructors>";
-			}
-			else if(field.getName().equals("methodes")) 
-			{
-				xmlFormat += "\n<methodes>";
-				for (int i = 0; i < myClass.getMethodes().size(); i++) {
-					
-					xmlFormat +="\n<methode>"+ myClass.getMethodes().get(i).toXML(myClass.getMethodes().get(i))+"\n</methode>";
-					
-				}
-				xmlFormat += "\n</methodes>";
-			}
-			else if(field.getName().equals("internClass")) 
-			{
-				xmlFormat += "\n<internClasses>";
-				for (int i = 0; i < myClass.getInternClass().size(); i++) {
-					
-					xmlFormat +="\n<internClass>"+ myClass.getInternClass().get(i).toXML(myClass.getInternClass().get(i))+"\n</internClass>";
-					
-				}
-				xmlFormat += "\n</internClasses>";
-			}
-			else 
-			{
-				try {
-					field.setAccessible(true);
-					xmlFormat +="\n<"+field.getName()+">"+field.get(myClass)+"</"+field.getName()+">";
-					field.setAccessible(false);
-				} catch (Exception e) {
-					System.out.println("ERREUR :" + e.getMessage());
-				}
-			}
+			xmlFormat +="\n<className>"+inheritanceChain.get(i)+"</className>";
+		}
+		xmlFormat += "\n</inheritanceChain>";
+
+		xmlFormat += "\n<interfaces>";
+		List<String> interfaces = myClass.getInterfaces();
+		int interfacesSize = interfaces.size();
+		
+		for (int i = 0; i < interfacesSize; i++) {
 			
+			xmlFormat +="\n<interface>"+interfaces.get(i)+"</interface>";
+		}
+		xmlFormat += "\n</interfaces>";
+
+		xmlFormat += "\n<properties>";
+		List<PropertyModel> properties = myClass.getProperties();
+		int propertiesSize = properties.size();
+		for (int i = 0; i < propertiesSize; i++) {
+			
+			xmlFormat +="\n<property>"+properties.get(i).toXML(properties.get(i))+"\n</property>";
 			
 		}
-		return xmlFormat;
+		xmlFormat += "\n</properties>";
+
+		xmlFormat += "\n<constructors>";
+		List<MethodModel> constructors = myClass.getConstructors();
+		int constructorsSize = constructors.size();
+		for (int i = 0; i <constructorsSize; i++) {
+			
+			xmlFormat +="\n<constructor>"+ constructors.get(i).toXML(constructors.get(i))+"\n</constructor>";
+			
+		}
+		xmlFormat += "\n</constructors>";
+
+		xmlFormat += "\n<methodes>";
+		List<MethodModel> methodes = myClass.getMethodes();
+		int methodesSize = methodes.size();
+		for (int i = 0; i < methodesSize; i++) {
+			
+			xmlFormat +="\n<methode>"+methodes.get(i).toXML(methodes.get(i))+"\n</methode>";
+			
+		}
+		xmlFormat += "\n</methodes>";
+
+		xmlFormat += "\n<aggregation>";
+		List<String> aggregation = myClass.getAggregation();
+		int aggregationSize = aggregation.size();
+		for (int i = 0; i <aggregationSize; i++) {
+			
+			xmlFormat +="\n<className>"+ aggregation.get(i)+"\n</className>";
+			
+		}
+		xmlFormat += "\n</aggregation>";
+		
+		
+		xmlFormat += "\n<uses>";
+		List<String> uses = myClass.getUses();
+		int usesSize = uses.size();
+		for (int i = 0; i <usesSize; i++) {
+			
+			xmlFormat +="\n<className>"+ uses.get(i)+"\n</className>";
+			
+		}
+		xmlFormat += "\n</uses>";
+		
+		
+		xmlFormat += "\n<internClasses>";
+		List<ClassModel> internClasses = myClass.getInternClass();
+		int internClassesSize = internClasses.size();
+		for (int i = 0; i <internClassesSize; i++) {
+			
+			xmlFormat +="\n<internClass>"+ internClasses.get(i).toXML(internClasses.get(i))+"\n</internClass>";
+			
+		}
+		xmlFormat += "\n</internClasses>";
+		
+		return xmlFormat + "</class>";
 	}
 	
 

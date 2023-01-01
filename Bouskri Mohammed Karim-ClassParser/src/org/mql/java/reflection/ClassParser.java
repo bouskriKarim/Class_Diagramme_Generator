@@ -6,6 +6,8 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.lang.reflect.Parameter;
+import java.lang.reflect.ParameterizedType;
+import java.util.Collection;
 import java.util.List;
 import java.util.Properties;
 
@@ -33,7 +35,6 @@ public class ClassParser {
 			getExtensionChain(className);
 			getIntenrClassess();
 			getAnnotation();
-			getRelations();
 		} catch (Exception e) {
 			System.out.println("ERREUR : " + e.getMessage());
 		}
@@ -54,11 +55,9 @@ public class ClassParser {
 	{
 		Field flieds[] = cls.getDeclaredFields();
 		for (Field field : flieds) {
-			if(!field.getType().isPrimitive()) 
-			{
-				System.out.println(field.getType().getName());
-			}
-			field.getType().isPrimitive();
+			
+			getAgregation(field);
+			
 			myClass.addPropertie(new PropertyModel(field.getName(),field.getType().getSimpleName(),getVisibility(field.getModifiers())));
 		}
 	}
@@ -72,6 +71,7 @@ public class ClassParser {
 			myClass.addMethod(new MethodModel(method.getName(), method.getReturnType().getSimpleName(),getVisibility(method.getModifiers())));
 			Parameter[] parameters = method.getParameters();
 			for (Parameter parameter : parameters) {
+				getUses(parameter);
 				myClass.getMethods().get(i).addParameter(new PropertyModel(parameter.getName(),parameter.getType().getSimpleName()));
 			}
 			i++;
@@ -86,6 +86,7 @@ public class ClassParser {
 			myClass.addConstructor(new MethodModel(cls.getSimpleName(),"",getVisibility(constructor.getModifiers())));
 			Parameter[] parameters = constructor.getParameters();
 			for (Parameter parameter : parameters) {
+				getUses(parameter);
 				myClass.getConstructors().get(i).addParameter(new PropertyModel(parameter.getName(),parameter.getType().getSimpleName()));
 			}
 			i++;	
@@ -276,18 +277,40 @@ public class ClassParser {
 		
 	}
 	
+	private void getAgregation(Field field) 
+	{
+		if(Collection.class.isAssignableFrom(field.getType())) 
+		{
+			
+			ParameterizedType p = (ParameterizedType)field.getGenericType();
+			Class<?> c = (Class<?>) p.getActualTypeArguments()[0];
+			if(!c.getName().equals("java.lang.String") && !c.isPrimitive()) myClass.addAgregat(c.getName());
+		}
+		else if(!field.getType().isPrimitive() && !field.getType().getName().equals("java.lang.String") && !field.getType().getGenericSuperclass().getTypeName().equals("java.lang.Number"))
+		{
+			myClass.addAgregat(field.getType().getName());
+		}
+	}
+	
+	private void getUses(Parameter field) 
+	{
+		if(Collection.class.isAssignableFrom(field.getType())) 
+		{
+			
+			ParameterizedType p = (ParameterizedType)field.getParameterizedType();
+			Class<?> c = (Class<?>) p.getActualTypeArguments()[0];
+			myClass.addUse(c.getName());
+		}
+		else if(!field.getType().isPrimitive() && !field.getType().getName().equals("java.lang.String") && !field.getType().getGenericSuperclass().getTypeName().equals("java.lang.Number"))
+		{
+			myClass.addUse(field.getType().getName());
+		}
+	}
+	
+	
 	public void showInSwing() 
 	{
 		new ClassNameFrame();
 	}
 	
-	public void getRelations() 
-	{
-		List<PropertyModel> properties = myClass.getProperties();
-		
-		for (PropertyModel property : properties) {
-			
-			//if()
-		}
-	}
 }

@@ -67,7 +67,7 @@ public class PackageModel {
 		
 		for(int i = 0; i<packageModel.getClasses().size(); i++) 
 		{
-			xmlFormat +="\n<class>"+packageModel.getClasses().get(i).toXML(packageModel.getClasses().get(i))+"\n</class>";
+			xmlFormat +=packageModel.getClasses().get(i).toXML(packageModel.getClasses().get(i));
 		}
 		xmlFormat +="</classes>";
 	
