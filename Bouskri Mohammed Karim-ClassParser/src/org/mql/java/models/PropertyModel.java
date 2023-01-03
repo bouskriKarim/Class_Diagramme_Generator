@@ -49,22 +49,11 @@ public class PropertyModel {
 		this.visibility = visibility;
 	}
 	
-	public String toXML(PropertyModel propertyModel) 
+	public String toXML(PropertyModel propertyModel,String type) 
 	{
 		String xmlFormat ="";
-		Field[] fields = this.getClass().getDeclaredFields();
 		
-		for (Field field : fields) {
-			
-			try {
-				field.setAccessible(true);
-				xmlFormat +="\n<"+field.getName()+">"+field.get(propertyModel)+"</"+field.getName()+">";
-				field.setAccessible(false);
-			} catch (Exception e) {
-				System.out.println("ERREUR :" + e.getMessage());
-			}
-			
-		}
+		xmlFormat +="\n<"+type+" name = '"+propertyModel.getName()+"' type = '"+propertyModel.getType()+"' visibility = '"+propertyModel.getVisibility() +"'>\n</"+type+">"; 
 		
 		return xmlFormat;
 	}

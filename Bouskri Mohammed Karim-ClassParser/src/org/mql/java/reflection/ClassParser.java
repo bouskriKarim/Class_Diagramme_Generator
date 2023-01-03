@@ -21,7 +21,6 @@ public class ClassParser {
 
 	private Class<?> cls;
 	private ClassModel myClass;
-	private PackageModel myPackage;
 	
 	public ClassParser(String className) {
 		try {

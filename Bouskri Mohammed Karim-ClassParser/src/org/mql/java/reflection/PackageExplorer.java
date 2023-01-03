@@ -26,7 +26,9 @@ public class PackageExplorer {
 		}
 		
 		newClassPath +="/"+projectName+"/bin";
-		File directory = new File(newClassPath);		
+		File directory = new File(newClassPath);
+		
+		
 		getPackages(directory.listFiles());
 		addClassesToPackages();
 

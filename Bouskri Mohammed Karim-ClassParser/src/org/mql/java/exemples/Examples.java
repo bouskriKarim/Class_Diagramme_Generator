@@ -8,17 +8,15 @@ import org.mql.java.reflection.ClassExplorer;
 public class Examples {
 
 	public Examples() {
-		exp01();
+		exp03();
 		//System.out.println(System.getProperty("java.class.path"));
 		}
 	
 	
 	//Affichage dans la console
 	private void exp01() {
-		ClassParser cls = new ClassParser("org.mql.java.models.User");
-		System.out.println(cls.getMyClass().getUses().get(1));
+		ClassParser cls = new ClassParser("org.mql.java.models.TestInterface");
 		//cls.showInConsole();
-
 	}
 	
 	//Afficage dans l'interface Swing
@@ -31,7 +29,7 @@ public class Examples {
 	//Affichage des nom des classes dans un package
 	private void exp03() 
 	{
-		ClassExplorer p = new ClassExplorer("org.mql.java.reflection");
+		ClassExplorer p = new ClassExplorer("org.mql.java.ui");
 		int sl = p.getClassList().length;
 		String[] s = p.getClassList();
 		for (int i = 0; i < sl; i++) {
@@ -62,18 +60,9 @@ public class Examples {
 		}
 	}
 	
-	private void exp06() 
-	{
-		ClassParser cls = new ClassParser("org.mql.java.models.User");
-		
-		for (int i = 0; i < cls.getMyClass().getMethodes().size(); i++) {
-			
-			System.out.println(cls.getMyClass().getMethodes().get(i).toXML(cls.getMyClass().getMethodes().get(i)));
-		}
-		
-	}
+
 	
-	private void exp07() 
+	private void exp06() 
 	{
 		ClassParser cls = new ClassParser("org.mql.java.models.User");
 		

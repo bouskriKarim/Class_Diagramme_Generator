@@ -73,39 +73,24 @@ public class MethodModel {
 		this.visibility = visibility;
 	}
 	
-	public String toXML(MethodModel methodModel)
+	public String toXML(MethodModel methodModel,String type)
 	{
 		String xmlFormat ="";
-		Field[] fields = this.getClass().getDeclaredFields();
+
 		
-		for (Field field : fields) {
+		xmlFormat += "\n<"+type+" name = '"+methodModel.getName()+"' type = '"+methodModel.getType()+"' visibility = '"+methodModel.getVisibility()+"'>";
+		
+		xmlFormat +="\n<parameters>";
+		for (int i = 0; i < methodModel.getParameters().size(); i++) {
 			
-			try {
-				if(field.getName().equals("parameters")) 
-				{
-					xmlFormat +="\n<parameters>";
-					for (int i = 0; i < methodModel.getParameters().size(); i++) {
-						
-						xmlFormat += "\n<parameter>"+methodModel.getParameters().get(i).toXML(methodModel.getParameters().get(i))+"\n</parameter>";
-					}
-					xmlFormat +="\n</parameters>";
-				}
-				else 
-				{
-					field.setAccessible(true);
-					xmlFormat +="\n<"+field.getName()+">"+field.get(methodModel)+"</"+field.getName()+">";
-					field.setAccessible(false);
-				}
-				
-				
-				
-			} catch (Exception e) {
-				System.out.println("ERREUR :" + e.getMessage());
-			}
-			
+			xmlFormat += methodModel.getParameters().get(i).toXML(methodModel.getParameters().get(i),"parameter");
 		}
+		xmlFormat +="\n</parameters>";
+
+
+
 		
-		return xmlFormat;
+		return xmlFormat+"</"+type+">";
 	}
 
 }

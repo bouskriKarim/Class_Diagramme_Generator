@@ -210,7 +210,7 @@ public class ClassModel {
 		int propertiesSize = properties.size();
 		for (int i = 0; i < propertiesSize; i++) {
 			
-			xmlFormat +="\n<property>"+properties.get(i).toXML(properties.get(i))+"\n</property>";
+			xmlFormat +=properties.get(i).toXML(properties.get(i),"property");
 			
 		}
 		xmlFormat += "\n</properties>";
@@ -220,7 +220,7 @@ public class ClassModel {
 		int constructorsSize = constructors.size();
 		for (int i = 0; i <constructorsSize; i++) {
 			
-			xmlFormat +="\n<constructor>"+ constructors.get(i).toXML(constructors.get(i))+"\n</constructor>";
+			xmlFormat +=constructors.get(i).toXML(constructors.get(i),"constructor");
 			
 		}
 		xmlFormat += "\n</constructors>";
@@ -230,7 +230,7 @@ public class ClassModel {
 		int methodesSize = methodes.size();
 		for (int i = 0; i < methodesSize; i++) {
 			
-			xmlFormat +="\n<methode>"+methodes.get(i).toXML(methodes.get(i))+"\n</methode>";
+			xmlFormat +=methodes.get(i).toXML(methodes.get(i),"method");
 			
 		}
 		xmlFormat += "\n</methodes>";
