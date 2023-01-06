@@ -1,6 +1,5 @@
 package org.mql.java.models;
 
-import java.lang.reflect.Field;
 import java.util.List;
 import java.util.Vector;
 
@@ -9,6 +8,7 @@ public class PackageModel {
 	private String packageName;
 	private String qualifiedName;
 	private List<ClassModel> classes;
+	private List<InterfaceModel> interfaces;
 
 	public PackageModel() {
 		
@@ -20,17 +20,24 @@ public class PackageModel {
 		this.packageName = packageName;
 		this.qualifiedName = qualifiedName;
 		classes = new Vector<>();
+		interfaces = new Vector<>();
 	}
 	public PackageModel(String packageName, String qualifiedName,List<ClassModel> classes) {
 		super();
 		this.packageName = packageName;
 		this.qualifiedName = qualifiedName;
 		this.classes = classes;
+		interfaces = new Vector<>();
 	}
 
 	public void addClass(ClassModel myClass) 
 	{
 		classes.add(myClass);
+	}
+	
+	public void addInterface(InterfaceModel myInterface) 
+	{
+		interfaces.add(myInterface);
 	}
 	
 	public String getPackageName() {
@@ -57,6 +64,10 @@ public class PackageModel {
 		this.classes = classes;
 	}
 	
+	public List<InterfaceModel> getInterfaces() {
+		return interfaces;
+	}
+	
 	public String toXml(PackageModel packageModel) 
 	{
 		String xmlFormat ="";
@@ -69,7 +80,15 @@ public class PackageModel {
 		{
 			xmlFormat +=packageModel.getClasses().get(i).toXML(packageModel.getClasses().get(i));
 		}
-		xmlFormat +="</classes>";
+		xmlFormat +="\n</classes>";
+		
+		xmlFormat +="\n<interfaces>";
+		
+		for(int i = 0; i<packageModel.getInterfaces().size(); i++) 
+		{
+			xmlFormat +=packageModel.getInterfaces().get(i).toXML(packageModel.getInterfaces().get(i));
+		}
+		xmlFormat +="\n</interfaces>";
 	
 		return xmlFormat+"</package>";
 	}

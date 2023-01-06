@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Properties;
 
 import org.mql.java.models.ClassModel;
+import org.mql.java.models.InterfaceModel;
 import org.mql.java.models.MethodModel;
 import org.mql.java.models.PackageModel;
 import org.mql.java.models.PropertyModel;
@@ -21,19 +22,36 @@ public class ClassParser {
 
 	private Class<?> cls;
 	private ClassModel myClass;
+	private InterfaceModel myInterface;
+	private Boolean isInterface = false;
 	
 	public ClassParser(String className) {
 		try {
 			this.cls = Class.forName(className);
-			myClass = new ClassModel(cls.getSimpleName(), cls.getSuperclass().getSimpleName());
-			myClass.setVisbility(getVisibility(cls.getModifiers()));
-			getProperties();
-			getAllMethodes();
-			getAllConstructors();
-			showClassHeader();
-			getExtensionChain(className);
-			getIntenrClassess();
-			getAnnotation();
+			if(cls.isInterface()) 
+			{
+				System.out.println("test");
+				
+				isInterface = true;
+				myInterface = new InterfaceModel(cls.getName());
+				System.out.println(myInterface.getName());
+				getProperties();
+				getAllMethodes();
+			}
+			else 
+			{
+				myClass = new ClassModel(cls.getSimpleName(), cls.getSuperclass().getSimpleName());
+				myClass.setVisbility(getVisibility(cls.getModifiers()));
+				getProperties();
+				getAllMethodes();
+				getAllConstructors();
+				showClassHeader();
+				getExtensionChain(className);
+				getIntenrClassess();
+				getAnnotation();
+			}
+			
+			
 		} catch (Exception e) {
 			System.out.println("ERREUR : " + e.getMessage());
 		}
@@ -45,6 +63,10 @@ public class ClassParser {
 	public ClassModel getMyClass() {
 		return myClass;
 	}
+	
+	public InterfaceModel getMyInterface() {
+		return myInterface;
+	}
 
 	private String getVisibility(int modifier) {
 		return Modifier.toString(modifier);
@@ -55,9 +77,18 @@ public class ClassParser {
 		Field flieds[] = cls.getDeclaredFields();
 		for (Field field : flieds) {
 			
-			getAgregation(field);
+			if(isInterface) 
+			{
+				myInterface.addProperty(new PropertyModel(field.getName(),field.getType().getSimpleName(),getVisibility(field.getModifiers())));
+			}
+			else 
+			{
+				getAgregation(field);
+				
+				myClass.addPropertie(new PropertyModel(field.getName(),field.getType().getSimpleName(),getVisibility(field.getModifiers())));
+			}
 			
-			myClass.addPropertie(new PropertyModel(field.getName(),field.getType().getSimpleName(),getVisibility(field.getModifiers())));
+			
 		}
 	}
 	
@@ -67,11 +98,31 @@ public class ClassParser {
 		Method[] methodes = cls.getDeclaredMethods();
 		
 		for (Method method : methodes) {
-			myClass.addMethod(new MethodModel(method.getName(), method.getReturnType().getSimpleName(),getVisibility(method.getModifiers())));
+			
+			if(isInterface) 
+			{
+				myInterface.addMethod(new MethodModel(method.getName(), method.getReturnType().getSimpleName(),getVisibility(method.getModifiers())));
+
+			}
+			else 
+			{
+				myClass.addMethod(new MethodModel(method.getName(), method.getReturnType().getSimpleName(),getVisibility(method.getModifiers())));
+
+			}
 			Parameter[] parameters = method.getParameters();
 			for (Parameter parameter : parameters) {
-				getUses(parameter);
-				myClass.getMethods().get(i).addParameter(new PropertyModel(parameter.getName(),parameter.getType().getSimpleName()));
+				
+				
+				if(isInterface) 
+				{
+					myInterface.getMethods().get(i).addParameter(new PropertyModel(parameter.getName(),parameter.getType().getSimpleName()));
+				}
+				else 
+				{
+					getUses(parameter);
+					myClass.getMethods().get(i).addParameter(new PropertyModel(parameter.getName(),parameter.getType().getSimpleName()));
+				}
+				
 			}
 			i++;
 		}

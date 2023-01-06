@@ -7,6 +7,7 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 
 import javax.swing.JFrame;
+import javax.swing.JScrollPane;
 
 public class ClassDiagrammeFrame extends JFrame{
 
@@ -16,7 +17,13 @@ public class ClassDiagrammeFrame extends JFrame{
 	
 	public ClassDiagrammeFrame() {
 		cdp = new ClassDiagrammePanel();
-		setContentPane(cdp);
+		//setContentPane(cdp);
+		
+		JScrollPane jsp = new JScrollPane(cdp);
+		
+		jsp.setVerticalScrollBarPolicy(jsp.VERTICAL_SCROLLBAR_ALWAYS);
+		
+		add(jsp);
 		
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -24,9 +31,6 @@ public class ClassDiagrammeFrame extends JFrame{
 		setVisible(true);
 	}
 	
-	private Dimension getScreenSize() {
-		return Toolkit.getDefaultToolkit().getScreenSize();
-	}
 	
 	public static void main(String[] args) {
 		new ClassDiagrammeFrame();

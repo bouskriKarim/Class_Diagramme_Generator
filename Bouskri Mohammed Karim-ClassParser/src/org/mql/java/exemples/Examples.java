@@ -8,15 +8,15 @@ import org.mql.java.reflection.ClassExplorer;
 public class Examples {
 
 	public Examples() {
-		exp03();
+		exp01();
 		//System.out.println(System.getProperty("java.class.path"));
 		}
 	
 	
 	//Affichage dans la console
 	private void exp01() {
-		ClassParser cls = new ClassParser("org.mql.java.models.TestInterface");
-		//cls.showInConsole();
+		ClassParser cls = new ClassParser("org.mql.java.enums.TestInterface");
+		System.out.println(cls.getMyInterface().getMethods().get(0).getParameters().get(0).getType());
 	}
 	
 	//Afficage dans l'interface Swing
