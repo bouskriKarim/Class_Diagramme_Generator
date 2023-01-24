@@ -1,6 +1,6 @@
 package org.mql.java.models;
 
-public class Account {
+public class Account extends TestInheritance {
 	
 	private String login;
 	private String password;

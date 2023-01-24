@@ -26,6 +26,8 @@ public class ProjectSaxParser extends DefaultHandler {
 	private boolean agregations = false;
 	private boolean uses = false;
 	
+	private boolean interfaces = false;
+	
 
 	public ProjectSaxParser(String filePath) {
 		SAXParserFactory factory = SAXParserFactory.newDefaultInstance();
@@ -62,7 +64,7 @@ public class ProjectSaxParser extends DefaultHandler {
 		{
 			constructorParameterIndex = -1;
 			methodParameterIndex = -1;
-			ClassModel myClass = new ClassModel(attributes.getValue("className"), attributes.getValue("superClass"));
+			ClassModel myClass = new ClassModel(attributes.getValue("className"),attributes.getValue("qualifiedName"), attributes.getValue("superClass"));
 			
 			myProject.getPackages().get(packageIndex).addClass(myClass);
 			classIndex++;
@@ -133,6 +135,10 @@ public class ProjectSaxParser extends DefaultHandler {
 				myProject.getPackages().get(packageIndex).getClasses().get(classIndex).addUse(attributes.getValue("name"));
 			}
 		}
+		else if(qName.equals("interface")) 
+		{
+			interfaces = true;
+		}
 		else if(qName.equals("uses")) 
 		{
 			uses = true;
@@ -169,10 +175,19 @@ public class ProjectSaxParser extends DefaultHandler {
 		{
 			uses = false;
 		}
+		else if(qName.equals("interface")) 
+		{
+			interfaces = false;
+		}
 	}
 	
 	
 	public void characters(char[] ch, int start, int length) throws SAXException {
+		
+		if(interfaces) 
+		{
+			myProject.getPackages().get(packageIndex).getClasses().get(classIndex).addInterface(new String(ch,start,length));
+		}
 		
 	}
 }

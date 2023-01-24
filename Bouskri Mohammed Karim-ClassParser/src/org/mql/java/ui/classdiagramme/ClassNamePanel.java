@@ -1,4 +1,4 @@
-package org.mql.java.ui;
+package org.mql.java.ui.classdiagramme;
 
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
@@ -12,6 +12,7 @@ import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
 
 import org.mql.java.reflection.ClassParser;
+import org.mql.java.ui.classdetails.MainFrame;
 
 public class ClassNamePanel extends JPanel {
 	

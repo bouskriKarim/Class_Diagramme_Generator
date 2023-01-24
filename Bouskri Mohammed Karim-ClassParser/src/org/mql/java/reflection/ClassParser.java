@@ -18,7 +18,7 @@ import org.mql.java.models.MethodModel;
 import org.mql.java.models.PackageModel;
 import org.mql.java.models.PropertyModel;
 import org.mql.java.models.RelationModel;
-import org.mql.java.ui.ClassNameFrame;
+import org.mql.java.ui.classdetails.ClassNameFrame;
 
 public class ClassParser {
 
@@ -32,11 +32,11 @@ public class ClassParser {
 			
 			if(cls.isInterface()) 
 			{
-				myClass = new ClassModel(cls.getSimpleName(), "");
+				myClass = new ClassModel(cls.getSimpleName(),cls.getName(), "");
 			}
 			else 
 			{
-				myClass = new ClassModel(cls.getSimpleName(), cls.getSuperclass().getSimpleName());
+				myClass = new ClassModel(cls.getSimpleName(),cls.getName(), cls.getSuperclass().getName());
 
 			}
 			
@@ -158,7 +158,7 @@ public class ClassParser {
 		String classHeader ="";
 		for(int i = 0; i < cls.getInterfaces().length ; i++) 
 		{
-			myClass.addInterface(cls.getInterfaces()[i].getSimpleName());
+			if(cls.getInterfaces()[i].getClassLoader() !=null) myClass.addInterface(cls.getInterfaces()[i].getName());
 		}
 		
 		int interfacesCount = myClass.getInterfaces().size();		
@@ -323,7 +323,7 @@ public class ClassParser {
 			ParameterizedType p = (ParameterizedType)field.getParameterizedType();
 			Class<?> c = (Class<?>) p.getActualTypeArguments()[0];
 			if(!c.getName().equals("java.lang.String") && !c.isPrimitive()) {
-				myClass.addAgregat(c.getName());
+				myClass.addUse(c.getName());
 				
 				}
 		}

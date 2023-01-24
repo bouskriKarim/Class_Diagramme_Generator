@@ -17,6 +17,7 @@ public class RelationModel {
 	}
 	
 	
+	
 
 	public RelationModel(String fistClassName, List<String> classes, String type) {
 		super();
@@ -39,7 +40,7 @@ public class RelationModel {
 		this.fistClassName = fistClassName;
 	}
 
-	public List<String> getAgrregatClasses() {
+	public List<String> getClasses() {
 		return classes;
 	}
 

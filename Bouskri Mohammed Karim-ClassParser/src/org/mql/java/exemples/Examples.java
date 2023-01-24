@@ -11,7 +11,6 @@ public class Examples {
 
 	public Examples() {
 		exp07();
-		//System.out.println(System.getProperty("java.class.path"));
 		}
 	
 	
@@ -87,8 +86,8 @@ public class Examples {
 	{
 		ProjectSaxParser p = new ProjectSaxParser("resources/XMLFile.xml");
 		
-		for (int i = 0; i < p.getMyProject().getPackages().get(3).getClasses().get(1).getAggregation().size(); i++) {
-			System.out.println("agg = "+p.getMyProject().getPackages().get(3).getClasses().get(5).getAggregation().get(1));
+		for (int i = 0; i < p.getMyProject().getPackages().get(3).getClasses().get(1).getUses().size(); i++) {
+			System.out.println("agg = "+p.getMyProject().getPackages().get(3).getClasses().get(1).getUses().get(i));
 		}
 	}
 	

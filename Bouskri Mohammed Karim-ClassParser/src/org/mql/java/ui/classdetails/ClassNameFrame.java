@@ -1,6 +1,8 @@
-package org.mql.java.ui;
+package org.mql.java.ui.classdetails;
 
 import javax.swing.JFrame;
+
+import org.mql.java.ui.classdiagramme.ClassNamePanel;
 
 public class ClassNameFrame extends JFrame {
 
@@ -18,10 +20,6 @@ public class ClassNameFrame extends JFrame {
 		setLocationRelativeTo(null);
 		setVisible(true);
 		
-	}
-	
-	public static void main(String[] args) {
-		new ClassNameFrame();
 	}
 
 }

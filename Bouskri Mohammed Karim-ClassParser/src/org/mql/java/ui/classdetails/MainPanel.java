@@ -1,4 +1,4 @@
-package org.mql.java.ui;
+package org.mql.java.ui.classdetails;
 
 import javax.swing.BoxLayout;
 import javax.swing.JPanel;

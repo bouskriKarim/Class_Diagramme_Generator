@@ -1,7 +1,7 @@
 package org.mql.java.models;
 
-public interface XMLInterface {
+public interface XMLInterface<T> {
 
-	public String toXML(Object object);
+	public String toXML(T object);
 	
 }

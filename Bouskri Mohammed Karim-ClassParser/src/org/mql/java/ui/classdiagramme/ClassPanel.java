@@ -1,4 +1,4 @@
-package org.mql.java.ui;
+package org.mql.java.ui.classdiagramme;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -61,7 +61,7 @@ public class ClassPanel extends JPanel{
 			
 			if(cls.isInterface()) 
 			{
-				return "<< interface >>\n"+new JLabel("\n").getName() + myClass.getName();
+				return "<< interface >>\n" + myClass.getName();
 			}
 			
 		} catch (ClassNotFoundException e) {

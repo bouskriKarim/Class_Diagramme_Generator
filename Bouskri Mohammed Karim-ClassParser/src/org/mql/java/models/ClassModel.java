@@ -3,7 +3,7 @@ package org.mql.java.models;
 import java.util.List;
 import java.util.Vector;
 
-public class ClassModel  {
+public class ClassModel implements XMLInterface<ClassModel>  {
 	
 	private String visbility;
 	private String name;
@@ -20,10 +20,11 @@ public class ClassModel  {
 	private List<String> uses;
 	private RelationModel relation;
 
-	public ClassModel(String name , String superClass) {
+	public ClassModel(String name ,String qualifiedName, String superClass) {
 		
 		this.name = name;
 		this.superClass = superClass;
+		this.qualifiedName = qualifiedName;
 		
 		interfaces = new Vector<>();
 		properties = new Vector<>();
@@ -185,7 +186,7 @@ public class ClassModel  {
 	{	
 		String xmlFormat ="";
 
-		xmlFormat +="\n<class className = '"+myClass.getName()+"' vidisility = '"+ myClass.getVisbility()+"' superClass = '"+myClass.getSuperClass()+"'>";
+		xmlFormat +="\n<class className = '"+myClass.getName()+"' qualifiedName = '"+myClass.getQualifiedName()+"' vidisility = '"+ myClass.getVisbility()+"' superClass = '"+myClass.getSuperClass()+"'>";
 		
 		xmlFormat += "\n<inheritanceChain>";
 		List<String> inheritanceChain = myClass.getExtensionChain();
@@ -287,6 +288,9 @@ public class ClassModel  {
 	public void setRelation(RelationModel relation) {
 		this.relation = relation;
 	}
+
+
+
 
 
 
