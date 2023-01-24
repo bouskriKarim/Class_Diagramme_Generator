@@ -3,12 +3,14 @@ package org.mql.java.exemples;
 
 import org.mql.java.reflection.ClassParser;
 import org.mql.java.reflection.PackageExplorer;
+import org.mql.java.xml.parser.ProjectSaxParser;
+import org.mql.java.models.User;
 import org.mql.java.reflection.ClassExplorer;
 
 public class Examples {
 
 	public Examples() {
-		exp01();
+		exp07();
 		//System.out.println(System.getProperty("java.class.path"));
 		}
 	
@@ -16,7 +18,7 @@ public class Examples {
 	//Affichage dans la console
 	private void exp01() {
 		ClassParser cls = new ClassParser("org.mql.java.enums.TestInterface");
-		System.out.println(cls.getMyInterface().getMethods().get(0).getParameters().get(0).getType());
+		//System.out.println(cls.getMyInterface().getMethods().get(0).getParameters().get(0).getType());
 	}
 	
 	//Afficage dans l'interface Swing
@@ -55,7 +57,18 @@ public class Examples {
 		
 		for (int i = 0; i < p.getProject().getPackages().size(); i++) {
 			
-			System.out.println(p.getProject().getPackages().get(i).getQualifiedName());
+			
+			for (int j = 0; j <p.getProject().getPackages().get(i).getClasses().size() ; j++) {
+				
+				System.out.println("Class : "+p.getProject().getPackages().get(i).getClasses().get(j).getName());
+				
+				for (int j2 = 0; j2 < p.getProject().getPackages().get(i).getClasses().get(j).getAggregation().size(); j2++) {
+					
+					System.out.println("\t"+p.getProject().getPackages().get(i).getClasses().get(j).getAggregation().get(j2));
+					
+				}
+				
+			}
 			
 		}
 	}
@@ -69,6 +82,21 @@ public class Examples {
 		System.out.println(cls.getMyClass().toXML(cls.getMyClass()));
 		
 	}
+	
+	private void exp07() 
+	{
+		ProjectSaxParser p = new ProjectSaxParser("resources/XMLFile.xml");
+		
+		for (int i = 0; i < p.getMyProject().getPackages().get(3).getClasses().get(1).getAggregation().size(); i++) {
+			System.out.println("agg = "+p.getMyProject().getPackages().get(3).getClasses().get(5).getAggregation().get(1));
+		}
+	}
+	
+	private void exp08() 
+	{
+		
+	}
+
 	
 	
 	public static void main(String[] args) {

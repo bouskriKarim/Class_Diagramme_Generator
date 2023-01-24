@@ -3,10 +3,11 @@ package org.mql.java.models;
 import java.util.List;
 import java.util.Vector;
 
-public class ClassModel {
+public class ClassModel  {
 	
 	private String visbility;
 	private String name;
+	private String qualifiedName;
 	private String superClass;
 	private List<String> extensionChain;
 	private List<String> interfaces;
@@ -17,6 +18,7 @@ public class ClassModel {
 	private String classHeader;
 	private List<String> aggregation;
 	private List<String> uses;
+	private RelationModel relation;
 
 	public ClassModel(String name , String superClass) {
 		
@@ -32,6 +34,7 @@ public class ClassModel {
 		aggregation = new Vector<>();
 		uses = new Vector<>();
 	}
+	
 	
 	public void addAgregat(String className) 
 	{
@@ -239,7 +242,7 @@ public class ClassModel {
 		int aggregationSize = aggregation.size();
 		for (int i = 0; i <aggregationSize; i++) {
 			
-			xmlFormat +="\n<className>"+ aggregation.get(i)+"\n</className>";
+			xmlFormat +="\n<className name = '"+ aggregation.get(i)+"'></className>";
 			
 		}
 		xmlFormat += "\n</aggregation>";
@@ -250,7 +253,7 @@ public class ClassModel {
 		int usesSize = uses.size();
 		for (int i = 0; i <usesSize; i++) {
 			
-			xmlFormat +="\n<className>"+ uses.get(i)+"\n</className>";
+			xmlFormat +="\n<className  name = '"+ uses.get(i)+"'></className>";
 			
 		}
 		xmlFormat += "\n</uses>";
@@ -268,6 +271,26 @@ public class ClassModel {
 		
 		return xmlFormat + "</class>";
 	}
-	
+
+	public String getQualifiedName() {
+		return qualifiedName;
+	}
+
+	public void setQualifiedName(String qualifiedName) {
+		this.qualifiedName = qualifiedName;
+	}
+
+	public RelationModel getRelation() {
+		return relation;
+	}
+
+	public void setRelation(RelationModel relation) {
+		this.relation = relation;
+	}
+
+
+
+
+
 
 }

@@ -11,7 +11,6 @@ import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import org.mql.java.enums.ColorChoice;
 import org.mql.java.models.MethodModel;
 
 public class MethodesPanel extends JPanel {

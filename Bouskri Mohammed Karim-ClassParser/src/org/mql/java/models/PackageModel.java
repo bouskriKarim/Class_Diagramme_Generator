@@ -72,12 +72,13 @@ public class PackageModel {
 	{
 		String xmlFormat ="";
 		
-		xmlFormat +="\n<package qualifiedName = '"+packageModel.getQualifiedName() +"'>" ;
+		xmlFormat +="\n<package qualifiedName = '"+packageModel.getQualifiedName() +"' name = '"+packageModel.getPackageName()+"'>" ;
 		
 		xmlFormat +="\n<classes>";
 		
 		for(int i = 0; i<packageModel.getClasses().size(); i++) 
 		{
+			System.out.println(i);
 			xmlFormat +=packageModel.getClasses().get(i).toXML(packageModel.getClasses().get(i));
 		}
 		xmlFormat +="\n</classes>";

@@ -10,46 +10,45 @@ import java.lang.reflect.ParameterizedType;
 import java.util.Collection;
 import java.util.List;
 import java.util.Properties;
+import java.util.Vector;
 
 import org.mql.java.models.ClassModel;
 import org.mql.java.models.InterfaceModel;
 import org.mql.java.models.MethodModel;
 import org.mql.java.models.PackageModel;
 import org.mql.java.models.PropertyModel;
+import org.mql.java.models.RelationModel;
 import org.mql.java.ui.ClassNameFrame;
 
 public class ClassParser {
 
 	private Class<?> cls;
 	private ClassModel myClass;
-	private InterfaceModel myInterface;
-	private Boolean isInterface = false;
+	private RelationModel relation;
 	
 	public ClassParser(String className) {
 		try {
 			this.cls = Class.forName(className);
+			
 			if(cls.isInterface()) 
 			{
-				System.out.println("test");
-				
-				isInterface = true;
-				myInterface = new InterfaceModel(cls.getName());
-				System.out.println(myInterface.getName());
-				getProperties();
-				getAllMethodes();
+				myClass = new ClassModel(cls.getSimpleName(), "");
 			}
 			else 
 			{
 				myClass = new ClassModel(cls.getSimpleName(), cls.getSuperclass().getSimpleName());
-				myClass.setVisbility(getVisibility(cls.getModifiers()));
-				getProperties();
-				getAllMethodes();
-				getAllConstructors();
-				showClassHeader();
-				getExtensionChain(className);
-				getIntenrClassess();
-				getAnnotation();
+
 			}
+			
+			myClass.setQualifiedName(className);
+			myClass.setVisbility(getVisibility(cls.getModifiers()));
+			getProperties();
+			getAllMethodes();
+			getAllConstructors();
+			showClassHeader();
+			getExtensionChain(className);
+			getIntenrClassess();
+			getAnnotation();
 			
 			
 		} catch (Exception e) {
@@ -63,10 +62,6 @@ public class ClassParser {
 	public ClassModel getMyClass() {
 		return myClass;
 	}
-	
-	public InterfaceModel getMyInterface() {
-		return myInterface;
-	}
 
 	private String getVisibility(int modifier) {
 		return Modifier.toString(modifier);
@@ -76,19 +71,10 @@ public class ClassParser {
 	{
 		Field flieds[] = cls.getDeclaredFields();
 		for (Field field : flieds) {
+
+			getAgregation(field);
 			
-			if(isInterface) 
-			{
-				myInterface.addProperty(new PropertyModel(field.getName(),field.getType().getSimpleName(),getVisibility(field.getModifiers())));
-			}
-			else 
-			{
-				getAgregation(field);
-				
-				myClass.addPropertie(new PropertyModel(field.getName(),field.getType().getSimpleName(),getVisibility(field.getModifiers())));
-			}
-			
-			
+			myClass.addPropertie(new PropertyModel(field.getName(),field.getType().getSimpleName(),getVisibility(field.getModifiers())));
 		}
 	}
 	
@@ -98,31 +84,12 @@ public class ClassParser {
 		Method[] methodes = cls.getDeclaredMethods();
 		
 		for (Method method : methodes) {
-			
-			if(isInterface) 
-			{
-				myInterface.addMethod(new MethodModel(method.getName(), method.getReturnType().getSimpleName(),getVisibility(method.getModifiers())));
 
-			}
-			else 
-			{
-				myClass.addMethod(new MethodModel(method.getName(), method.getReturnType().getSimpleName(),getVisibility(method.getModifiers())));
-
-			}
+			myClass.addMethod(new MethodModel(method.getName(), method.getReturnType().getSimpleName(),getVisibility(method.getModifiers())));
 			Parameter[] parameters = method.getParameters();
 			for (Parameter parameter : parameters) {
-				
-				
-				if(isInterface) 
-				{
-					myInterface.getMethods().get(i).addParameter(new PropertyModel(parameter.getName(),parameter.getType().getSimpleName()));
-				}
-				else 
-				{
-					getUses(parameter);
-					myClass.getMethods().get(i).addParameter(new PropertyModel(parameter.getName(),parameter.getType().getSimpleName()));
-				}
-				
+				getUses(parameter);
+				myClass.getMethods().get(i).addParameter(new PropertyModel(parameter.getName(),parameter.getType().getSimpleName()));
 			}
 			i++;
 		}
@@ -160,7 +127,6 @@ public class ClassParser {
 			
 		}
 	}
-	
 	
 	public int getInterfacesCount() 
 	{
@@ -270,7 +236,6 @@ public class ClassParser {
 		}
 	}
 	
-	
 	public List<String> getExtensionChain(String className)
 	{
 		Class<?> motherClass;
@@ -302,7 +267,6 @@ public class ClassParser {
 		
 	}
 	
-	
 	public void showInConsole() 
 	{		
 		System.out.println(myClass.getClassHeader()+ " {");
@@ -329,17 +293,26 @@ public class ClassParser {
 	
 	private void getAgregation(Field field) 
 	{
+		RelationModel rm = new RelationModel(myClass.getQualifiedName(), "agregation");
+		
 		if(Collection.class.isAssignableFrom(field.getType())) 
 		{
 			
 			ParameterizedType p = (ParameterizedType)field.getGenericType();
 			Class<?> c = (Class<?>) p.getActualTypeArguments()[0];
-			if(!c.getName().equals("java.lang.String") && !c.isPrimitive()) myClass.addAgregat(c.getName());
+			if(!c.getName().equals("java.lang.String") && !c.isPrimitive()) {
+				myClass.addAgregat(c.getName());
+				
+				}
 		}
-		else if(!field.getType().isPrimitive() && !field.getType().getName().equals("java.lang.String") && !field.getType().getGenericSuperclass().getTypeName().equals("java.lang.Number"))
+		else if(field.getType().getClassLoader() != null)
 		{
+			//!field.getType().isPrimitive() && !field.getType().getName().equals("java.lang.String") && !field.getType().getGenericSuperclass().getTypeName().equals("java.lang.Number")
 			myClass.addAgregat(field.getType().getName());
+			
 		}
+		
+		
 	}
 	
 	private void getUses(Parameter field) 
@@ -349,14 +322,16 @@ public class ClassParser {
 			
 			ParameterizedType p = (ParameterizedType)field.getParameterizedType();
 			Class<?> c = (Class<?>) p.getActualTypeArguments()[0];
-			myClass.addUse(c.getName());
+			if(!c.getName().equals("java.lang.String") && !c.isPrimitive()) {
+				myClass.addAgregat(c.getName());
+				
+				}
 		}
-		else if(!field.getType().isPrimitive() && !field.getType().getName().equals("java.lang.String") && !field.getType().getGenericSuperclass().getTypeName().equals("java.lang.Number"))
+		else if(field.getType().getClassLoader() != null)
 		{
 			myClass.addUse(field.getType().getName());
 		}
 	}
-	
 	
 	public void showInSwing() 
 	{

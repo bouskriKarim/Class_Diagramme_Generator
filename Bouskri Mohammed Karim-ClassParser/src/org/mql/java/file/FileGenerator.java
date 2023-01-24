@@ -18,7 +18,6 @@ public class FileGenerator {
 				myWriter.write(pe.getProject().toXML(pe.getProject()));
 				
 				
-				
 			    myWriter.close();
 			} catch (IOException e) {
 				e.printStackTrace();

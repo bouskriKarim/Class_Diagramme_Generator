@@ -2,10 +2,6 @@ package org.mql.java.ui;
 
 
 
-
-import java.awt.Dimension;
-import java.awt.Toolkit;
-
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 
@@ -20,9 +16,7 @@ public class ClassDiagrammeFrame extends JFrame{
 		//setContentPane(cdp);
 		
 		JScrollPane jsp = new JScrollPane(cdp);
-		
 		jsp.setVerticalScrollBarPolicy(jsp.VERTICAL_SCROLLBAR_ALWAYS);
-		
 		add(jsp);
 		
 		setDefaultCloseOperation(EXIT_ON_CLOSE);

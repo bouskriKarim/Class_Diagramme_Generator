@@ -15,7 +15,6 @@ import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
-import org.mql.java.enums.ColorChoice;
 import org.mql.java.models.ClassModel;
 
 public class ClassPanel extends JPanel{
@@ -30,7 +29,8 @@ public class ClassPanel extends JPanel{
 		
 		classNamePanel = new JPanel();
 		classNamePanel.setBackground(Color.decode("#ceefe1"));
-		JLabel className = new JLabel(myClass.getName());
+		JLabel className = new JLabel(isInterface(myClass));
+		setName(myClass.getQualifiedName());
 		Font font = new Font("Arial", Font.ITALIC|Font.BOLD, 15);
 		className.setFont(font);
 		classNamePanel.add(className);
@@ -50,6 +50,26 @@ public class ClassPanel extends JPanel{
 		setBackground(new Color(0,0,0,0));
 		
 		this.add(new MethodesPanel(myClass.getMethodes()));
+		
+	}
+	
+	public static String isInterface(ClassModel myClass) 
+	{
+		Class<?> cls ;
+		try {
+			cls = Class.forName(myClass.getQualifiedName());
+			
+			if(cls.isInterface()) 
+			{
+				return "<< interface >>\n"+new JLabel("\n").getName() + myClass.getName();
+			}
+			
+		} catch (ClassNotFoundException e) {
+			System.out.println("ERREUR : "+e.getMessage());
+		}
+		
+		return myClass.getName();
+		
 		
 	}
 	

@@ -11,7 +11,6 @@ import javax.swing.BoxLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import org.mql.java.enums.ColorChoice;
 import org.mql.java.models.PropertyModel;
 
 public class PropertiesPanel extends JPanel {
