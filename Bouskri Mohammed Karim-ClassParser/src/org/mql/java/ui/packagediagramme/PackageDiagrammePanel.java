@@ -3,12 +3,18 @@ package org.mql.java.ui.packagediagramme;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.BoxLayout;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 
 import org.mql.java.models.ProjectModel;
+import org.mql.java.ui.classdiagramme.ClassDiagrammeFrame;
 
 public class PackageDiagrammePanel extends JPanel {
 
@@ -19,21 +25,28 @@ public class PackageDiagrammePanel extends JPanel {
 
 	public PackageDiagrammePanel(ProjectModel project) {
 		
+		JMenuBar bar = new JMenuBar();
+		JMenu menu = new JMenu("Package Diagramme");
+		bar.add(menu);
+		JMenuItem item = new JMenuItem("switch to Class Diagramme");
+		
+		item.addActionListener(new MenuListener(project));
+		menu.add(item);
+		add(bar);
+		
 		
 		setLayout(new BoxLayout(this,BoxLayout.Y_AXIS));
 		
 		for (int i = 0; i <project.getPackages().size(); i++) {
 			
-			add(new PackagePanel(project.getPackages().get(i)));
-			
+			add(new PackagePanel(project.getPackages().get(i)));	
 		}
 		setBackground(Color.white);
 	}
 	
-	@Override
-	protected void paintComponent(Graphics g) {
-		super.paintComponent(g);
-		 drawGrid(g); 
+	public void paint(Graphics g) {
+		super.paint(g);
+
 	}
 	
 	private void drawGrid(Graphics g) 
@@ -49,6 +62,24 @@ public class PackageDiagrammePanel extends JPanel {
 		for (int i = 0; i < width/space; i++) {
 			g.drawLine(i*space, 0, i*space, height);
 		}
+	}
+	
+}
+
+class MenuListener implements ActionListener
+{
+	
+	private ProjectModel project;
+	public MenuListener(ProjectModel project) {
+		this.project = project;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+
+
+		new ClassDiagrammeFrame(project);
+		
 	}
 	
 }

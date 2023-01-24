@@ -30,7 +30,8 @@ public class PackagePanel extends JPanel {
 		EtchedBorder border = new EtchedBorder(Color.black, Color.black);
 		setBorder(new TitledBorder(border,myPackage.getQualifiedName()));
 		
-		setBackground(Color.decode("#7efff5"));
+		//setBorder(new LineBorder(Color.black, 3));
+		
 		
 		for (int i = 0; i < myPackage.getClasses().size(); i++) {
 			
@@ -38,7 +39,7 @@ public class PackagePanel extends JPanel {
 			
 		}
 		int width = getPreferredSize().width;
-		setPreferredSize(new Dimension(Toolkit.getDefaultToolkit().getScreenSize().width-1000, (width/2)+270));
+		setPreferredSize(new Dimension(Toolkit.getDefaultToolkit().getScreenSize().width-100, (width/2)+270));
 	}
 
 	public void paint(Graphics g) {
@@ -48,6 +49,8 @@ public class PackagePanel extends JPanel {
 		{
 			drawBorder(g, this.getComponent(i));
 		}
+		
+		
 	}
 	
 	private void drawBorder(Graphics g,Component component) 

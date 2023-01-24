@@ -29,13 +29,6 @@ public class PackageDiagrammeFrame extends JFrame {
 		setVisible(true);
 		
 	}
-	
-	public static void main(String[] args) {
-		
-		ProjectSaxParser projectParser = new ProjectSaxParser("resources/XMLFile.xml");
-		
-		new PackageDiagrammeFrame(projectParser.getMyProject());
-		
-	}
+
 
 }

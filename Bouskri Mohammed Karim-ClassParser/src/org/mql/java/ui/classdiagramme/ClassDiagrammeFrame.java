@@ -8,7 +8,7 @@ import javax.swing.JScrollPane;
 import org.mql.java.models.ProjectModel;
 import org.mql.java.xml.parser.ProjectSaxParser;
 
-public class ClassDiagrammeFrame extends JFrame{
+public class ClassDiagrammeFrame extends JFrame {
 
 
 	private static final long serialVersionUID = 1L;
@@ -26,11 +26,5 @@ public class ClassDiagrammeFrame extends JFrame{
 		setVisible(true);
 	}
 	
-	
-	public static void main(String[] args) {
-		ProjectSaxParser projectParser = new ProjectSaxParser("resources/XMLFile.xml");
-		
-		new ClassDiagrammeFrame(projectParser.getMyProject());
-	}
 
 }

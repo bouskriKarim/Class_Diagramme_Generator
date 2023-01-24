@@ -8,14 +8,24 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Stroke;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.List;
 import java.util.Vector;
 
+import javax.swing.JButton;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
 import org.mql.java.models.ClassModel;
 import org.mql.java.models.ProjectModel;
+import org.mql.java.ui.packagediagramme.PackageDiagrammeFrame;
 
 public class ClassDiagrammePanel extends JPanel {
 
@@ -27,13 +37,14 @@ public class ClassDiagrammePanel extends JPanel {
 
 
 	public ClassDiagrammePanel(ProjectModel project) {
+
 		
-		
+		JButton btn = new JButton("switch to package Diagramme");
+		btn.setLayout(null);
+		btn.addActionListener(new BtnListener(project));
+		this.add(btn);
 		
 		setBackground(Color.white);
-		
-		
-		
 		
 		for (int i = 0; i < project.getPackages().size(); i++) {
 			List<ClassModel> classes = project.getPackages().get(i).getClasses();
@@ -43,6 +54,8 @@ public class ClassDiagrammePanel extends JPanel {
 				this.add(new ClassPanel(classes.get(j)));
 			}
 		}
+		
+		
 		int width = getPreferredSize().width;
 		setPreferredSize(new Dimension(Toolkit.getDefaultToolkit().getScreenSize().width, width/2));
 
@@ -73,12 +86,11 @@ public class ClassDiagrammePanel extends JPanel {
 		super.paint(g);
 		this.g = g;
 		components = this.getComponents();
-		
-		for (Component component : components) {
-
-			int x = component.getLocation().x;
-			int y = component.getLocation().y;			
-			drawBorder(component,x, y); 
+		for (int i = 1; i < components.length; i++) {
+			
+			int x = components[i].getLocation().x;
+			int y = components[i].getLocation().y;			
+			drawBorder(components[i],x, y); 
 
 		}
 	}
@@ -242,7 +254,7 @@ public class ClassDiagrammePanel extends JPanel {
 
 	private Component getComponentByName(String name) 
 	{
-		for (int i = 0; i < components.length; i++) {
+		for (int i = 1; i < components.length; i++) {
 			if(components[i].getName().equals(name)) return components[i]; 
 		}
 		return null;
@@ -256,6 +268,18 @@ public class ClassDiagrammePanel extends JPanel {
 		g2d.drawLine(xs, ys, xe, ye);
 		g2d.dispose();
 	}
-	
 
+class BtnListener implements ActionListener
+{
+	private ProjectModel project;
+	public BtnListener(ProjectModel project) {
+		this.project = project;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		new PackageDiagrammeFrame(project);
+		
+	}
+}
 }
