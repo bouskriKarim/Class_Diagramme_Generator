@@ -13,22 +13,19 @@ import java.util.Properties;
 import java.util.Vector;
 
 import org.mql.java.models.ClassModel;
-import org.mql.java.models.InterfaceModel;
 import org.mql.java.models.MethodModel;
-import org.mql.java.models.PackageModel;
 import org.mql.java.models.PropertyModel;
-import org.mql.java.models.RelationModel;
 import org.mql.java.ui.classdetails.ClassNameFrame;
 
 public class ClassParser {
 
 	private Class<?> cls;
 	private ClassModel myClass;
-	private RelationModel relation;
 	
 	public ClassParser(String className) {
 		try {
 			this.cls = Class.forName(className);
+			
 			
 			if(cls.isInterface()) 
 			{
@@ -293,7 +290,6 @@ public class ClassParser {
 	
 	private void getAgregation(Field field) 
 	{
-		RelationModel rm = new RelationModel(myClass.getQualifiedName(), "agregation");
 		
 		if(Collection.class.isAssignableFrom(field.getType())) 
 		{
@@ -307,7 +303,6 @@ public class ClassParser {
 		}
 		else if(field.getType().getClassLoader() != null)
 		{
-			//!field.getType().isPrimitive() && !field.getType().getName().equals("java.lang.String") && !field.getType().getGenericSuperclass().getTypeName().equals("java.lang.Number")
 			myClass.addAgregat(field.getType().getName());
 			
 		}
@@ -332,6 +327,7 @@ public class ClassParser {
 			myClass.addUse(field.getType().getName());
 		}
 	}
+
 	
 	public void showInSwing() 
 	{

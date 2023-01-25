@@ -18,7 +18,6 @@ public class ClassModel implements XMLInterface<ClassModel>  {
 	private String classHeader;
 	private List<String> aggregation;
 	private List<String> uses;
-	private RelationModel relation;
 
 	public ClassModel(String name ,String qualifiedName, String superClass) {
 		
@@ -281,13 +280,6 @@ public class ClassModel implements XMLInterface<ClassModel>  {
 		this.qualifiedName = qualifiedName;
 	}
 
-	public RelationModel getRelation() {
-		return relation;
-	}
-
-	public void setRelation(RelationModel relation) {
-		this.relation = relation;
-	}
 
 
 

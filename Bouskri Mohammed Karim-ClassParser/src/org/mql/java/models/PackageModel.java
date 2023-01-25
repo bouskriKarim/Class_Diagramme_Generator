@@ -3,7 +3,7 @@ package org.mql.java.models;
 import java.util.List;
 import java.util.Vector;
 
-public class PackageModel {
+public class PackageModel implements XMLInterface<PackageModel> {
 	
 	private String packageName;
 	private String qualifiedName;
@@ -68,7 +68,7 @@ public class PackageModel {
 		return interfaces;
 	}
 	
-	public String toXml(PackageModel packageModel) 
+	public String toXML(PackageModel packageModel) 
 	{
 		String xmlFormat ="";
 		
@@ -93,5 +93,7 @@ public class PackageModel {
 	
 		return xmlFormat+"</package>";
 	}
+
+
 
 }

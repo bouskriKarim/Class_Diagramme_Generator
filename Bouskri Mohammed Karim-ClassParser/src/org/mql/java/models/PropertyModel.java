@@ -1,9 +1,7 @@
 package org.mql.java.models;
 
-import java.io.FileDescriptor;
-import java.lang.reflect.Field;
 
-public class PropertyModel {
+public class PropertyModel implements XMLInterface<PropertyModel> {
 	
 	private String name;
 	private String type;
@@ -56,6 +54,12 @@ public class PropertyModel {
 		xmlFormat +="\n<"+type+" name = '"+propertyModel.getName()+"' type = '"+propertyModel.getType()+"' visibility = '"+propertyModel.getVisibility() +"'>\n</"+type+">"; 
 		
 		return xmlFormat;
+	}
+
+	@Override
+	public String toXML(PropertyModel object) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 

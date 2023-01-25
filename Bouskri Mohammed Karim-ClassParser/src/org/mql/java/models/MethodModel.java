@@ -4,7 +4,7 @@ import java.lang.reflect.Field;
 import java.util.List;
 import java.util.Vector;
 
-public class MethodModel {
+public class MethodModel implements XMLInterface<MethodModel> {
 	
 	private String name;
 	private String type;
@@ -92,5 +92,12 @@ public class MethodModel {
 		
 		return xmlFormat+"</"+type+">";
 	}
+
+	@Override
+	public String toXML(MethodModel object) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 }

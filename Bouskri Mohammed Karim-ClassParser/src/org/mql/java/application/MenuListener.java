@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import org.mql.java.models.ProjectModel;
+import org.mql.java.ui.classdiagramme.ClassDiagrammeFrame;
 import org.mql.java.ui.packagediagramme.PackageDiagrammeFrame;
 
 public class MenuListener implements ActionListener {
@@ -20,7 +21,7 @@ public class MenuListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if(toClass) 
 		{
-			new Main(project);
+			new ClassDiagrammeFrame(project);
 		}
 		else 
 		{

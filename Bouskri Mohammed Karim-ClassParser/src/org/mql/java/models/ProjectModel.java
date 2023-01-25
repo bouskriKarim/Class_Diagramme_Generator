@@ -3,7 +3,7 @@ package org.mql.java.models;
 import java.util.List;
 import java.util.Vector;
 
-public class ProjectModel {
+public class ProjectModel implements XMLInterface<ProjectModel> {
 
 	private String projectName;
 	private List<PackageModel>packages;
@@ -46,7 +46,7 @@ public class ProjectModel {
 		XMLFormat +="\n<project projectName = '"+project.getProjectName()+"'>";
 		XMLFormat +="\n<packages>";
 		for (int i = 0; i < project.getPackages().size(); i++) {
-			XMLFormat += project.getPackages().get(i).toXml(project.getPackages().get(i));
+			XMLFormat += project.getPackages().get(i).toXML(project.getPackages().get(i));
 		}
 		XMLFormat +="\n</packages>";
 		
