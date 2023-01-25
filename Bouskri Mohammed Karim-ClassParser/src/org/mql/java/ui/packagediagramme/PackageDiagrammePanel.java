@@ -25,15 +25,6 @@ public class PackageDiagrammePanel extends JPanel {
 
 	public PackageDiagrammePanel(ProjectModel project) {
 		
-		JMenuBar bar = new JMenuBar();
-		JMenu menu = new JMenu("Package Diagramme");
-		bar.add(menu);
-		JMenuItem item = new JMenuItem("switch to Class Diagramme");
-		
-		item.addActionListener(new MenuListener(project));
-		menu.add(item);
-		add(bar);
-		
 		
 		setLayout(new BoxLayout(this,BoxLayout.Y_AXIS));
 		
@@ -66,20 +57,3 @@ public class PackageDiagrammePanel extends JPanel {
 	
 }
 
-class MenuListener implements ActionListener
-{
-	
-	private ProjectModel project;
-	public MenuListener(ProjectModel project) {
-		this.project = project;
-	}
-
-	@Override
-	public void actionPerformed(ActionEvent e) {
-
-
-		new ClassDiagrammeFrame(project);
-		
-	}
-	
-}

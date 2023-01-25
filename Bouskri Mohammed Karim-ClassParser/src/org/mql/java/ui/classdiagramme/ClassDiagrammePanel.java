@@ -35,15 +35,10 @@ public class ClassDiagrammePanel extends JPanel {
 	private Component[] components;
 	private List<ClassModel> allClasses = new Vector<>();
 
-
 	public ClassDiagrammePanel(ProjectModel project) {
 
 		
-		JButton btn = new JButton("switch to package Diagramme");
-		btn.setLayout(null);
-		btn.addActionListener(new BtnListener(project));
-		this.add(btn);
-		
+
 		setBackground(Color.white);
 		
 		for (int i = 0; i < project.getPackages().size(); i++) {
@@ -86,7 +81,7 @@ public class ClassDiagrammePanel extends JPanel {
 		super.paint(g);
 		this.g = g;
 		components = this.getComponents();
-		for (int i = 1; i < components.length; i++) {
+		for (int i = 0; i < components.length; i++) {
 			
 			int x = components[i].getLocation().x;
 			int y = components[i].getLocation().y;			
@@ -254,7 +249,7 @@ public class ClassDiagrammePanel extends JPanel {
 
 	private Component getComponentByName(String name) 
 	{
-		for (int i = 1; i < components.length; i++) {
+		for (int i = 0; i < components.length; i++) {
 			if(components[i].getName().equals(name)) return components[i]; 
 		}
 		return null;
@@ -269,17 +264,5 @@ public class ClassDiagrammePanel extends JPanel {
 		g2d.dispose();
 	}
 
-class BtnListener implements ActionListener
-{
-	private ProjectModel project;
-	public BtnListener(ProjectModel project) {
-		this.project = project;
-	}
 
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		new PackageDiagrammeFrame(project);
-		
-	}
-}
 }
